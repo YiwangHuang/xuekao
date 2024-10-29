@@ -68,6 +68,55 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+// 实现显示/隐藏目录功能的脚本文件（识别文本并添加监听事件），"显示/隐藏目录"在根目录_quarto.yml文件中设置（使其加入顶部导航栏）
+
+// 确保文档内容加载完成后执行以下脚本
+document.addEventListener("DOMContentLoaded", function() {
+  // 获取body元素、按钮和可能存在的div
+  const body = document.querySelector('body');
+  const sidebar = document.getElementById('quarto-margin-sidebar');
+
+  // 查找导航栏中的所有链接项
+  var navItems = document.querySelectorAll('.navbar a');
+
+  // 遍历每个链接项，寻找文本内容为“Trigger JS”的项
+  navItems.forEach(function(item) {
+    if (item.textContent.trim() === "隐藏目录") {
+
+      // 为找到的项添加点击事件监听器
+      item.addEventListener("click", function(event) {
+        event.preventDefault();  // 阻止默认的跳转行为
+
+        // 显示提示框，表示 JavaScript 已经触发
+        // alert("JavaScript script triggered!");
+        
+        // 你可以在这里添加其他自定义的 JavaScript 脚本
+
+        // 切换body的class
+        body.classList.toggle('fullcontent');
+
+        // 根据body的class初始化div显示状态
+        if (body.classList.contains('fullcontent')) {
+            if (sidebar) {
+              item.textContent = '显示目录';
+              sidebar.style.display = 'none'; // 设置目录栏的显示状态
+            }
+        } else {
+            if (sidebar) {
+              item.textContent = '隐藏目录';
+              sidebar.style.display = 'block'; // 设置目录栏的显示状态
+            }
+        }
+      });
+    }
+  });
+});
+
+
+
+</script>
+
 
   <script defer="" src="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -408,51 +457,6 @@ F\propto IL
 </section>
 
 </main> <!-- /main -->
-<script>
-// 确保文档内容加载完成后执行以下脚本
-document.addEventListener("DOMContentLoaded", function() {
-  // 获取body元素、按钮和可能存在的div
-  const body = document.querySelector('body');
-  const sidebar = document.getElementById('quarto-margin-sidebar');
-
-
-  // 查找导航栏中的所有链接项
-  var navItems = document.querySelectorAll('.navbar a');
-
-  // 遍历每个链接项，寻找文本内容为“Trigger JS”的项
-  navItems.forEach(function(item) {
-    if (item.textContent.trim() === "隐藏目录") {
-
-      // 为找到的项添加点击事件监听器
-      item.addEventListener("click", function(event) {
-        event.preventDefault();  // 阻止默认的跳转行为
-
-        // 显示提示框，表示 JavaScript 已经触发
-        // alert("JavaScript script triggered!");
-        
-        // 你可以在这里添加其他自定义的 JavaScript 脚本
-
-        // 切换body的class
-        body.classList.toggle('fullcontent');
-
-        // 根据body的class初始化div显示状态
-        if (body.classList.contains('fullcontent')) {
-            if (sidebar) {
-              item.textContent = '显示目录';
-              sidebar.style.display = 'none'; // 设置目录栏的显示状态
-            }
-        } else {
-            if (sidebar) {
-              item.textContent = '隐藏目录';
-              sidebar.style.display = 'block'; // 设置目录栏的显示状态
-            }
-        }
-      });
-    }
-  });
-});
-</script>
-
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -244,12 +244,13 @@ window.Quarto = {
 
 </main> <!-- /main -->
 <script>
+// 实现显示/隐藏目录功能的脚本文件（识别文本并添加监听事件），"显示/隐藏目录"在根目录_quarto.yml文件中设置（使其加入顶部导航栏）
+
 // 确保文档内容加载完成后执行以下脚本
 document.addEventListener("DOMContentLoaded", function() {
   // 获取body元素、按钮和可能存在的div
   const body = document.querySelector('body');
   const sidebar = document.getElementById('quarto-margin-sidebar');
-
 
   // 查找导航栏中的所有链接项
   var navItems = document.querySelectorAll('.navbar a');
@@ -286,6 +287,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
+
+
 </script>
 
 <script id="quarto-html-after-body" type="application/javascript">
