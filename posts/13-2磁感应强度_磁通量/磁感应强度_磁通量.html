@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="黄轶凡">
 <meta name="dcterms.date" content="2024-10-16">
 
-<title>iPhys - 磁感应强度 磁通量</title>
+<title>磁感应强度 磁通量 – iPhys</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,11 +68,36 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-// 实现显示/隐藏目录功能的脚本文件（识别文本并添加监听事件），"显示/隐藏目录"在根目录_quarto.yml文件中设置（使其加入顶部导航栏）
+<style>
+  /* 让 <u> 元素的鼠标样式为指针，以提示用户可以点击 */
+  u {
+    color: blue;
+    cursor: pointer; /* 鼠标悬停显示为手型 */
+    position: relative; /* 设置为相对定位，以便伪元素定位相对于 <u> 元素 */
+    text-decoration: none; /* 去掉默认的下划线 */
+  }
 
+  /* 使用伪元素 ::after 添加下划线 */
+  u::after {
+    content: ''; /* 设置伪元素内容为空 */
+    position: absolute; /* 绝对定位，以便相对于 <u> 元素进行精确定位 */
+    left: 0; /* 下划线从 <u> 元素的左边开始 */
+    right: 0; /* 下划线延伸到 <u> 元素的右边 */
+    bottom: 0; /* 下划线贴近 <u> 元素底部 */
+    height: 1px; /* 下划线高度设为 1px */
+    background-color: black; /* 下划线颜色为黑色 */
+  }
+
+  /* 隐藏文本内容，但保留伪元素下划线可见 */
+  .hidden-text {
+    color: transparent; /* 将文字颜色设置为透明，实现文字隐藏 */
+  }
+</u></u></u></u></u></u></style>
+
+<script>
 // 确保文档内容加载完成后执行以下脚本
 document.addEventListener("DOMContentLoaded", function() {
+
   // 获取body元素、按钮和可能存在的div
   const body = document.querySelector('body');
   const sidebar = document.getElementById('quarto-margin-sidebar');
@@ -80,18 +105,13 @@ document.addEventListener("DOMContentLoaded", function() {
   // 查找导航栏中的所有链接项
   var navItems = document.querySelectorAll('.navbar a');
 
-  // 遍历每个链接项，寻找文本内容为“Trigger JS”的项
+  // 遍历每个链接项，寻找文本内容为的项
   navItems.forEach(function(item) {
+    // 在该if语句中实现显示/隐藏目录功能（识别文本并添加监听事件），"显示/隐藏目录"在根目录_quarto.yml文件中设置（使其加入顶部导航栏）
     if (item.textContent.trim() === "隐藏目录") {
-
       // 为找到的项添加点击事件监听器
       item.addEventListener("click", function(event) {
         event.preventDefault();  // 阻止默认的跳转行为
-
-        // 显示提示框，表示 JavaScript 已经触发
-        // alert("JavaScript script triggered!");
-        
-        // 你可以在这里添加其他自定义的 JavaScript 脚本
 
         // 切换body的class
         body.classList.toggle('fullcontent');
@@ -110,12 +130,56 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       });
     }
+    // 在该if语句中实现切换阅读模式/挖空模式（识别文本并添加监听事件）
+    if (item.textContent.trim() === "阅读模式") {
+      // 获取页面中的所有 <u> 元素
+      const elements = document.querySelectorAll('u');
+
+      // 记录是否处于“点击模式”
+      let isClickMode = false;
+      // 为找到的项添加点击事件监听器——切换点击模式
+      item.addEventListener("click",function(event) {
+        event.preventDefault();  // 阻止默认的跳转行为
+        isClickMode = !isClickMode; // 反转点击模式状态
+
+        // 根据当前状态设置所有 <u> 元素的显示状态
+        elements.forEach(element => {
+          if (isClickMode) {
+            element.classList.add('hidden-text'); // 进入点击模式时隐藏文本内容
+          } else {
+            element.classList.remove('hidden-text'); // 退出点击模式时显示文本内容
+          }
+        });
+
+        // 更新提示文本以反映当前模式
+        item.textContent = isClickMode ? '挖空模式' : '阅读模式';
+      })
+    
+      // 为每个 <u> 元素添加点击事件
+      elements.forEach(element => {
+        element.addEventListener('click', () => {
+          // 仅在“点击模式”下允许点击隐藏和显示单个元素
+          if (isClickMode) {
+            element.classList.toggle('hidden-text');
+          }
+        });
+      });
+    }
   });
 });
 
-
-
+  // 获取页面中所有 <u> 元素
+  const elements = document.querySelectorAll('u');
+  
+  // 为每个 <u> 元素添加点击事件
+  elements.forEach(element => {
+    element.addEventListener('click', () => {
+      // 切换 .hidden-text 类，以控制文本显示或隐藏
+      element.classList.toggle('hidden-text');
+    });
+  });
 </script>
+
 
 
   <script defer="" src="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.js"></script>
@@ -177,7 +241,7 @@ window.Quarto = {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -185,6 +249,10 @@ window.Quarto = {
   <li class="nav-item">
     <a class="nav-link" href="../../#"> 
 <span class="menu-text">隐藏目录</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../#"> 
+<span class="menu-text">阅读模式</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
@@ -202,7 +270,7 @@ window.Quarto = {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -293,7 +361,7 @@ window.Quarto = {
 <p><video src="./assets/磁感应强度_磁通量.mp4" class="img-fluid" controls=""><a href="./assets/磁感应强度_磁通量.mp4">Video</a></video></p>
 </div>
 </div>
-<p>精确的实验表明：<strong>通电导线与磁场方向垂直时</strong>，它受力的大小 <span class="math inline">F</span> 既与导线的长度 <span class="math inline">L</span> 成正比，又与导线中的电流 <span class="math inline">I</span> 成正比</p>
+<p>精确的实验表明：<strong>通电导线与磁场方向垂直时</strong>，它受力的大小 <span class="math inline">F</span> 既与导线的长度 <span class="math inline">L</span> 成正比，又与<u>导线中的电流</u> <span class="math inline">I</span> 成正比</p>
 <p><span class="math display">
 \begin{cases}
 F\propto I \\
@@ -492,18 +560,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -535,7 +592,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -543,7 +622,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
