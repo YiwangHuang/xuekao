@@ -232,7 +232,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="学考复习" data-listing-date-sort="1729872000000" data-listing-file-modified-sort="1730264172201" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="68">
+<div class="quarto-post image-right" data-index="0" data-categories="学考复习" data-listing-date-sort="1729872000000" data-listing-file-modified-sort="1730301710120" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="68">
 <div class="thumbnail">
 <p><a href="./posts/学考02-匀变速直线运动的规律/学考02-匀变速直线运动的规律.html" class="no-external"></a></p><a href="./posts/学考02-匀变速直线运动的规律/学考02-匀变速直线运动的规律.html" class="no-external">
 <p class="card-img-top"><img src="posts/学考02-匀变速直线运动的规律/assets/学考02-匀变速直线运动的规律.png"  class="thumbnail-image card-img"/></p>
@@ -265,7 +265,7 @@ Oct 26, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="学考复习" data-listing-date-sort="1729785600000" data-listing-file-modified-sort="1730270200682" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="185">
+<div class="quarto-post image-right" data-index="1" data-categories="学考复习" data-listing-date-sort="1729785600000" data-listing-file-modified-sort="1730301705094" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="185">
 <div class="thumbnail">
 <p><a href="./posts/学考01-运动的描述and匀变速直线运动/学考01-运动的描述and匀变速直线运动.html" class="no-external"></a></p><a href="./posts/学考01-运动的描述and匀变速直线运动/学考01-运动的描述and匀变速直线运动.html" class="no-external">
 <p class="card-img-top"><img src="posts/学考01-运动的描述and匀变速直线运动/assets/学考01-运动的描述and匀变速直线运动-1.png"  class="thumbnail-image card-img"/></p>
@@ -937,20 +937,38 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         });
       });
+    
+      // 监听键盘按下事件
+      document.addEventListener('keydown', (event) => {
+        if (isClickMode) { // 仅在点击模式下响应方向键
+          if (event.key === 'ArrowRight') {
+            // 查找上一个可见元素后的第一个隐藏元素，并显示它
+            let lastVisibleIndex = -1;
+            elements.forEach((element, index) => {
+              if (!element.classList.contains('hidden-text')) {
+                lastVisibleIndex = index;
+              }
+            });
+            for (let i = lastVisibleIndex + 1; i < elements.length; i++) {
+              if (elements[i].classList.contains('hidden-text')) {
+                elements[i].classList.remove('hidden-text');
+                break;
+              }
+            }
+          } else if (event.key === 'ArrowLeft') {
+            // 查找最后一个可见的 <u> 元素并隐藏它
+            for (let i = elements.length - 1; i >= 0; i--) {
+              if (!elements[i].classList.contains('hidden-text')) {
+                elements[i].classList.add('hidden-text');
+                break;
+              }
+            }
+          }
+        }
+      });
     }
   });
 });
-
-  // 获取页面中所有 <u> 元素
-  const elements = document.querySelectorAll('u');
-  
-  // 为每个 <u> 元素添加点击事件
-  elements.forEach(element => {
-    element.addEventListener('click', () => {
-      // 切换 .hidden-text 类，以控制文本显示或隐藏
-      element.classList.toggle('hidden-text');
-    });
-  });
 </script>
 
 

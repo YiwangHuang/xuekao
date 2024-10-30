@@ -164,20 +164,38 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         });
       });
+    
+      // 监听键盘按下事件
+      document.addEventListener('keydown', (event) => {
+        if (isClickMode) { // 仅在点击模式下响应方向键
+          if (event.key === 'ArrowRight') {
+            // 查找上一个可见元素后的第一个隐藏元素，并显示它
+            let lastVisibleIndex = -1;
+            elements.forEach((element, index) => {
+              if (!element.classList.contains('hidden-text')) {
+                lastVisibleIndex = index;
+              }
+            });
+            for (let i = lastVisibleIndex + 1; i < elements.length; i++) {
+              if (elements[i].classList.contains('hidden-text')) {
+                elements[i].classList.remove('hidden-text');
+                break;
+              }
+            }
+          } else if (event.key === 'ArrowLeft') {
+            // 查找最后一个可见的 <u> 元素并隐藏它
+            for (let i = elements.length - 1; i >= 0; i--) {
+              if (!elements[i].classList.contains('hidden-text')) {
+                elements[i].classList.add('hidden-text');
+                break;
+              }
+            }
+          }
+        }
+      });
     }
   });
 });
-
-  // 获取页面中所有 <u> 元素
-  const elements = document.querySelectorAll('u');
-  
-  // 为每个 <u> 元素添加点击事件
-  elements.forEach(element => {
-    element.addEventListener('click', () => {
-      // 切换 .hidden-text 类，以控制文本显示或隐藏
-      element.classList.toggle('hidden-text');
-    });
-  });
 </script>
 
 
