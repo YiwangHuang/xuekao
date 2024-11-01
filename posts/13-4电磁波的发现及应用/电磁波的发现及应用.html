@@ -164,20 +164,38 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         });
       });
+    
+      // 监听键盘按下事件
+      document.addEventListener('keydown', (event) => {
+        if (isClickMode) { // 仅在点击模式下响应方向键
+          if (event.key === 'ArrowRight') {
+            // 查找上一个可见元素后的第一个隐藏元素，并显示它
+            let lastVisibleIndex = -1;
+            elements.forEach((element, index) => {
+              if (!element.classList.contains('hidden-text')) {
+                lastVisibleIndex = index;
+              }
+            });
+            for (let i = lastVisibleIndex + 1; i < elements.length; i++) {
+              if (elements[i].classList.contains('hidden-text')) {
+                elements[i].classList.remove('hidden-text');
+                break;
+              }
+            }
+          } else if (event.key === 'ArrowLeft') {
+            // 查找最后一个可见的 <u> 元素并隐藏它
+            for (let i = elements.length - 1; i >= 0; i--) {
+              if (!elements[i].classList.contains('hidden-text')) {
+                elements[i].classList.add('hidden-text');
+                break;
+              }
+            }
+          }
+        }
+      });
     }
   });
 });
-
-  // 获取页面中所有 <u> 元素
-  const elements = document.querySelectorAll('u');
-  
-  // 为每个 <u> 元素添加点击事件
-  elements.forEach(element => {
-    element.addEventListener('click', () => {
-      // 切换 .hidden-text 类，以控制文本显示或隐藏
-      element.classList.toggle('hidden-text');
-    });
-  });
 </script>
 
 
@@ -352,8 +370,7 @@ window.Quarto = {
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
-
-A(电磁感应定律)--&gt;B(变化的磁场产生电场)--&gt;C(猜测：变化的电场产生磁场)--&gt;D(预言电磁波的存在)
+A(电磁感应定律)--&gt; B(变化的磁场产生电场)--&gt;C(猜测：变化的电场产生磁场)--&gt;D(预言电磁波的存在)
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -374,45 +391,49 @@ A(电磁感应定律)--&gt;B(变化的磁场产生电场)--&gt;C(猜测：变化
 <li>在一列水波中，凸起的最高处叫作波峰，如图中标示的 <span class="math inline">A</span>、<span class="math inline">A'</span>; 凹下的最低处叫作波谷, 如图中标示的 <span class="math inline">D</span>、<span class="math inline">D'</span>。临近的两个波峰 (或波谷) 的距离叫作波长，用 <span class="math inline">\lambda</span> 表示。 <img src="./assets/电磁波的发现及应用.png" class="img-fluid"></li>
 </ol>
 <p>在 <span class="math inline">1\;\mathrm{s}</span> 内有多少次波峰 (或波谷) 通过, 波的频率就是多少赫兹. 用来描述波传播快慢的物理量叫作波速, 波速、波长、频率三者的关系是 <span class="math inline">波速=波长\times 频率</span></p>
-<p>对于电磁波，有同样的关系。如果用λ表示电磁波的 波长，f 表示它的频率，那么，电磁波的波速 c 与λ、f 的关系是</p>
+<p>对于电磁波，有同样的关系。如果用λ表示电磁波的</p>
+<p>波长，<span class="math inline">f</span> 表示它的频率，那么，电磁波的波速 <span class="math inline">c</span> 与 <span class="math inline">\lambda</span>、<span class="math inline">f</span> 的关系是</p>
+<p><span class="math display">
+c=\lambda \cdot f
+</span></p>
 <section id="电磁波谱" class="level3">
 <h3 class="anchored" data-anchor-id="电磁波谱">电磁波谱</h3>
 <ol type="1">
 <li>无线电波
 <ul>
-<li>波长大于 <span class="math inline">1\;\mathrm{mm}</span>，频率小于 <strong><span class="math inline">300\;\mathrm{GHz}</span></strong></li>
+<li>波长大于 <span class="math inline">1\;\mathrm{mm}</span>，频率小于 <u><span class="math inline">300\;\mathrm{GHz}</span></u></li>
 <li>分为长波、中波、短波和微波</li>
 <li>主要用于无线电通讯</li>
 </ul></li>
 <li>红外线
 <ul>
 <li>波长比无线电波短，比可见光长</li>
-<li>所有的物体都在不停地发射红外线。</li>
-<li>主要用于<strong>遥感、加热</strong></li>
+<li><strong>所有的物体都在不停地发射红外线</strong>。</li>
+<li>主要用于<u>遥感、加热</u></li>
 </ul></li>
 <li>可见光
 <ul>
-<li>波长在 <span class="math inline">700\;\mathrm{nm}\sim 400\;\mathrm{nm}</span></li>
-<li>分为红橙黄绿青蓝紫七色，波长<strong>由大到小</strong>，频率<strong>由低到高</strong></li>
+<li>波长在 <strong><span class="math inline">700\;\mathrm{nm}\sim 400\;\mathrm{nm}</span></strong></li>
+<li>分为红橙黄绿青蓝紫七色，波长<u>由大到小</u>，频率<u>由低到高</u></li>
 <li>可被视网膜感知</li>
 </ul></li>
 <li>紫外线
 <ul>
 <li>波长: <span class="math inline">400\;\mathrm{mm}\sim 5 \;\mathrm{nm}</span>，频率 <span class="math inline">7.5\times 10^{14}\sim 6\times 10^{16}\;\mathrm{Hz}</span></li>
 <li>有较高的能量</li>
-<li>用途: <strong>灭菌消毒、荧光作用</strong></li>
+<li>用途: <u>灭菌消毒、荧光作用</u></li>
 </ul></li>
 <li>X 射线
 <ul>
 <li>波长比紫外线更短</li>
 <li>有比紫外线更高的能量</li>
-<li>有较强的穿透作用，可用于<strong>透视、金属探伤</strong>。</li>
+<li>有较强的穿透作用，可用于<u>透视、金属探伤</u>。</li>
 </ul></li>
 <li><span class="math inline">\gamma</span> 射线
 <ul>
 <li>波长比 X 射线线更短，频率非常高</li>
 <li>比 X 射线更高的能量</li>
-<li>有很强的穿透作用，可用于金属探伤</li>
+<li>有很强的穿透作用，可用于<u>金属探伤</u></li>
 </ul></li>
 </ol>
 
