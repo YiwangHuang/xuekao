@@ -68,7 +68,8 @@
       },
       "config": {
         "buttonText": "画板模式",
-        "showBorder": true
+        "showBorder": true,
+        "mouseEnabled": true
       }
     }
   ]

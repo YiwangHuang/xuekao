@@ -1,7 +1,8 @@
 (function() {
     const config = window.featureConfigs.drawingBoard || {
         buttonText: "画板模式",
-        showBorder: true
+        showBorder: true,
+        mouseEnabled: true
     };
 
     // 创建按钮
@@ -133,7 +134,7 @@
         const colorGroup = document.createElement('div');
         colorGroup.className = 'color-group';
 
-        // 添加颜色按钮
+        // 添颜色按钮
         colorPresets.forEach(preset => {
             const colorBtn = document.createElement('button');
             colorBtn.className = 'color-btn';
@@ -466,7 +467,7 @@
         canvas.width = docWidth * dpr;
         canvas.height = docHeight * dpr;
         
-        // 但显示大小保持不变，这样可以让一个CSS像素对应多个canvas像素
+        // 但显��大小保持不变，这样可以让一个CSS像素对应多个canvas像素
         canvas.style.width = docWidth + 'px';
         canvas.style.height = docHeight + 'px';
         container.style.width = docWidth + 'px';
@@ -534,19 +535,69 @@
         resizeCanvas();
     }
 
-    // 鼠标事件监听器
-    canvas.addEventListener('mousedown', (e) => {
+    // 触控事件处理（默认支持）
+    canvas.addEventListener('touchstart', (e) => {
+        e.preventDefault();  // 防止触摸时页面滚动
+        const touch = e.touches[0];
+        const rect = canvas.getBoundingClientRect();
         isDrawing = true;
-        [lastX, lastY] = [e.offsetX, e.offsetY];
-        saveState();  // 在开始绘画前保存状态
+        [lastX, lastY] = [
+            touch.clientX - rect.left,
+            touch.clientY - rect.top
+        ];
+        saveState();  // 保存当前状态用于撤销
     });
-    canvas.addEventListener('mousemove', draw);
-    canvas.addEventListener('mouseup', () => {
+
+    canvas.addEventListener('touchmove', (e) => {
+        if (!isDrawing) return;
+        const touch = e.touches[0];
+        const rect = canvas.getBoundingClientRect();
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+        
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+        
+        [lastX, lastY] = [x, y];
+    });
+
+    canvas.addEventListener('touchend', () => {
         isDrawing = false;
     });
-    canvas.addEventListener('mouseout', () => {
+
+    canvas.addEventListener('touchcancel', () => {
         isDrawing = false;
     });
+
+    // 鼠标事件处理（可选）
+    if (config.mouseEnabled) {
+        canvas.addEventListener('mousedown', (e) => {
+            isDrawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+            saveState();
+        });
+
+        canvas.addEventListener('mousemove', (e) => {
+            if (!isDrawing) return;
+            
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        });
+
+        canvas.addEventListener('mouseup', () => {
+            isDrawing = false;
+        });
+
+        canvas.addEventListener('mouseout', () => {
+            isDrawing = false;
+        });
+    }
 
     // 监听窗口大小变化，实时调整画布大小
     window.addEventListener('resize', resizeCanvas);
