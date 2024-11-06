@@ -390,7 +390,7 @@
         const currentState = ctx.getImageData(0, 0, canvas.width, canvas.height);
         undoStack.push(currentState);
         
-        // 恢复重做状态
+        // 复重做状态
         const nextState = redoStack.pop();
         ctx.putImageData(nextState, 0, 0);
         
@@ -467,7 +467,7 @@
         canvas.width = docWidth * dpr;
         canvas.height = docHeight * dpr;
         
-        // 但显��大小保持不变，这样可以让一个CSS像素对应多个canvas像素
+        // 但显大小保持不变，这样可以让一个CSS像素对应多个canvas像素
         canvas.style.width = docWidth + 'px';
         canvas.style.height = docHeight + 'px';
         container.style.width = docWidth + 'px';
@@ -486,117 +486,53 @@
         ctx.lineCap = 'round';
     }
 
-    // 2. 修改绘画事件处理
-    function startDrawing(e) {
-        isDrawing = true;
-        [lastX, lastY] = [e.offsetX, e.offsetY];
-    }
-
-    function draw(e) {
-        if (!isDrawing) return;
+    // 添加统一的绘制函数
+    function drawLine(fromX, fromY, toX, toY) {
         ctx.beginPath();
-        ctx.moveTo(lastX, lastY);
-        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.moveTo(fromX, fromY);
+        ctx.lineTo(toX, toY);
         ctx.stroke();
-        [lastX, lastY] = [e.offsetX, e.offsetY];
     }
 
-    function stopDrawing() {
-        if (!isDrawing) return;
-        isDrawing = false;
-        // 在绘画结束时保存状态
+    // 统一的事件处理函数
+    function handleDrawStart(x, y) {
+        isDrawing = true;
+        [lastX, lastY] = [x, y];
         saveState();
     }
 
-    // 初始化画布属性
-    function initCanvas() {
-        canvas = document.createElement('canvas');
-        canvas.className = 'drawing-board';
-        
-        // 使用 2d 上下文，并优化性能设置
-        ctx = canvas.getContext('2d', {
-            willReadFrequently: false,  // 设为false因为我们不需要频繁读取像素
-            alpha: false,               // 禁用alpha通道以提升性能
-            desynchronized: true        // 减少延迟，提升性能
-        });
-        
-        // 禁用图像平滑，因为我们是画线条而不是处理图像
-        ctx.imageSmoothingEnabled = false;
-        
-        // 优化线条设置
-        ctx.lineJoin = 'round';
-        ctx.lineCap = 'round';
-        ctx.miterLimit = 1;            // 减小斜接限制，提升性能
-        
-        // 设置合成操作
-        ctx.globalCompositeOperation = 'source-over';
-        
-        container.appendChild(canvas);
-        resizeCanvas();
+    function handleDrawMove(x, y) {
+        if (!isDrawing) return;
+        drawLine(lastX, lastY, x, y);
+        [lastX, lastY] = [x, y];
     }
 
-    // 触控事件处理（默认支持）
-    canvas.addEventListener('touchstart', (e) => {
-        e.preventDefault();  // 防止触摸时页面滚动
-        const touch = e.touches[0];
-        const rect = canvas.getBoundingClientRect();
-        isDrawing = true;
-        [lastX, lastY] = [
-            touch.clientX - rect.left,
-            touch.clientY - rect.top
-        ];
-        saveState();  // 保存当前状态用于撤销
-    });
+    function handleDrawEnd() {
+        isDrawing = false;
+    }
 
-    canvas.addEventListener('touchmove', (e) => {
-        if (!isDrawing) return;
+    // 触控事件处理
+    function handleTouch(e, handler) {
+        e.preventDefault();
         const touch = e.touches[0];
         const rect = canvas.getBoundingClientRect();
         const x = touch.clientX - rect.left;
         const y = touch.clientY - rect.top;
-        
-        ctx.beginPath();
-        ctx.moveTo(lastX, lastY);
-        ctx.lineTo(x, y);
-        ctx.stroke();
-        
-        [lastX, lastY] = [x, y];
-    });
+        handler(x, y);
+    }
 
-    canvas.addEventListener('touchend', () => {
-        isDrawing = false;
-    });
-
-    canvas.addEventListener('touchcancel', () => {
-        isDrawing = false;
-    });
+    // 简化后的事件监听
+    canvas.addEventListener('touchstart', e => handleTouch(e, handleDrawStart));
+    canvas.addEventListener('touchmove', e => handleTouch(e, handleDrawMove));
+    canvas.addEventListener('touchend', handleDrawEnd);
+    canvas.addEventListener('touchcancel', handleDrawEnd);
 
     // 鼠标事件处理（可选）
     if (config.mouseEnabled) {
-        canvas.addEventListener('mousedown', (e) => {
-            isDrawing = true;
-            [lastX, lastY] = [e.offsetX, e.offsetY];
-            saveState();
-        });
-
-        canvas.addEventListener('mousemove', (e) => {
-            if (!isDrawing) return;
-            
-            ctx.beginPath();
-            ctx.moveTo(lastX, lastY);
-            ctx.lineTo(e.offsetX, e.offsetY);
-            ctx.stroke();
-            
-            [lastX, lastY] = [e.offsetX, e.offsetY];
-        });
-
-        canvas.addEventListener('mouseup', () => {
-            isDrawing = false;
-        });
-
-        canvas.addEventListener('mouseout', () => {
-            isDrawing = false;
-        });
+        canvas.addEventListener('mousedown', e => handleDrawStart(e.offsetX, e.offsetY));
+        canvas.addEventListener('mousemove', e => handleDrawMove(e.offsetX, e.offsetY));
+        canvas.addEventListener('mouseup', handleDrawEnd);
+        canvas.addEventListener('mouseout', handleDrawEnd);
     }
 
     // 监听窗口大小变化，实时调整画布大小
