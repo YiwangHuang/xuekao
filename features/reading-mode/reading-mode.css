@@ -1,0 +1,21 @@
+/* 只保留与按钮无关的样式 */
+u {
+    color: var(--text-color, blue);
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+}
+
+u::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: var(--underline-color, black);
+}
+
+.hidden-text {
+    color: transparent;
+} 

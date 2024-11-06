@@ -1,0 +1,59 @@
+.random-number-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    font-size: 24px;
+}
+
+.random-number-button {
+    position: fixed;
+    z-index: 1000;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px 0 0 4px; /* 只保留左侧圆角 */
+    background: #dc3545;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.3s ease; /* 添加过渡动画 */
+    transform: translateX(calc(100% - 40px)); /* 默认收起，只露出一小部分 */
+    right: 0; /* 紧贴右侧 */
+}
+
+.random-number-button:hover {
+    background: #c82333;
+    transform: translateX(0); /* 鼠标悬停时完全展开 */
+}
+
+/* 位置调整 */
+.random-number-button.position-top-right {
+    top: 200px;
+}
+
+/* 位置类 */
+.random-number-button.position-bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+.random-number-button.position-bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+.random-number-button.position-top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.random-number-button.position-top-left {
+    top: 20px;
+    left: 20px;
+} 

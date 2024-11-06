@@ -1,0 +1,78 @@
+/* 所有功能按钮的基础样式 */
+.feature-button {
+    /* 固定定位，不随页面滚动 */
+    position: fixed;
+    z-index: 1000;
+    
+    /* 基础样式 */
+    max-width: 10vw;  /* 限制最大宽度为视窗宽度的15% */
+    aspect-ratio: 3 / 1;  /* 保持宽高比 3:1 */
+    padding: 0 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: min(14px, 1.2vw);  /* 字体大小也随视窗变化但有上限 */
+    
+    /* 动画设置 */
+    transition: all 0.3s ease;
+
+    /* 默认靠右 */
+    right: 0;
+    border-radius: 4px 0 0 4px;
+    transform: translateX(calc(100% - 15px));
+    
+    /* 防止内容溢出 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 悬停时展开 */
+.feature-button:hover {
+    transform: translateX(0); /* 完全展开 */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+}
+
+/* 垂直位置 - 使用视窗高度的百分比 */
+.feature-button.position-1 { 
+    top: 20vh; /* 视窗高度的20% */
+}
+.feature-button.position-2 { 
+    top: 30vh; /* 视窗高度的30% */
+}
+.feature-button.position-3 { 
+    top: 40vh; /* 视窗高度的40% */
+}
+.feature-button.position-4 { 
+    top: 50vh; /* 视窗高度的50% */
+}
+
+/* 主题色 */
+.feature-button.theme-blue {
+    background: #007bff;
+}
+.feature-button.theme-blue:hover {
+    background: #0056b3;
+}
+
+.feature-button.theme-green {
+    background: #28a745;
+}
+.feature-button.theme-green:hover {
+    background: #218838;
+}
+
+.feature-button.theme-red {
+    background: #dc3545;
+}
+.feature-button.theme-red:hover {
+    background: #c82333;
+}
+
+/* 添加紫色主题 */
+.feature-button.theme-purple {
+    background: #6f42c1;
+}
+.feature-button.theme-purple:hover {
+    background: #553098;
+} 

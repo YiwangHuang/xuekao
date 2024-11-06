@@ -1,0 +1,75 @@
+{
+  "common": {
+    "css": ["common/feature-buttons.css"]
+  },
+  "features": [
+    {
+      "name": "randomNumber",
+      "description": "在页面上显示一个随机数生成按钮",
+      "version": "1.0.0",
+      "author": "Your Name",
+      "enabled": true,
+      "files": {
+        "js": "random-number/random-number.js",
+        "css": "random-number/random-number.css"
+      },
+      "config": {
+        "buttonText": "生成随机数",
+        "minNumber": 0,
+        "maxNumber": 50,
+        "displayTime": 5000,
+        "position": "bottom-right"
+      }
+    },
+    {
+      "name": "sidebarToggle",
+      "description": "控制侧边栏的显示和隐藏",
+      "version": "1.0.0",
+      "author": "Your Name",
+      "enabled": true,
+      "files": {
+        "js": "sidebar-toggle/sidebar-toggle.js",
+        "css": "sidebar-toggle/sidebar-toggle.css"
+      },
+      "config": {
+        "showText": "显示目录",
+        "hideText": "隐藏目录",
+        "position": "top-right",
+        "initialState": "hidden"
+      }
+    },
+    {
+      "name": "readingMode",
+      "description": "支持阅读模式和挖空模式的切换",
+      "version": "1.0.0",
+      "author": "Your Name",
+      "enabled": true,
+      "files": {
+        "js": "reading-mode/reading-mode.js",
+        "css": "reading-mode/reading-mode.css"
+      },
+      "config": {
+        "readingModeText": "阅读模式",
+        "hiddenModeText": "挖空模式",
+        "underlineColor": "black",
+        "textColor": "blue",
+        "position": "top-right"
+      }
+    },
+    {
+      "name": "drawingBoard",
+      "description": "在页面上添加可绘画的画板",
+      "version": "1.0.0",
+      "author": "Your Name",
+      "enabled": true,
+      "files": {
+        "js": "drawing-board/drawing-board.js",
+        "css": "drawing-board/drawing-board.css"
+      },
+      "config": {
+        "buttonText": "画板模式",
+        "showBorder": true
+      }
+    }
+  ]
+} 
