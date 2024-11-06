@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "iPhys",
     "section": "",
-    "text": "运动的描述 匀变速直线运动\n\n\n\n\n\n\n学考复习\n\n\n\n\n\n\n\n\n\nOct 26, 2024\n\n\n黄轶凡\n\n\n\n\n\n\n\n\n\n\n\n\n匀变速直线运动的的规律\n\n\n\n\n\n\n学考复习\n\n\n\n\n\n\n\n\n\nOct 26, 2024\n\n\n黄轶凡\n\n\n\n\n\n\nNo matching items"
+    "text": "重力 弹力 摩擦力\n\n\n\n\n\n\n学考复习\n\n\n\n\n\n\n\n\n\nNov 6, 2024\n\n\n黄轶凡\n\n\n\n\n\n\n\n\n\n\n\n\n运动的描述 匀变速直线运动\n\n\n\n\n\n\n学考复习\n\n\n\n\n\n\n\n\n\nOct 26, 2024\n\n\n黄轶凡\n\n\n\n\n\n\n\n\n\n\n\n\n匀变速直线运动的的规律\n\n\n\n\n\n\n学考复习\n\n\n\n\n\n\n\n\n\nOct 26, 2024\n\n\n黄轶凡\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/学考02-匀变速直线运动的规律_webpage/学考02-匀变速直线运动的规律.html",
@@ -75,5 +75,33 @@
     "title": "运动的描述 匀变速直线运动",
     "section": "课堂练习",
     "text": "课堂练习"
+  },
+  {
+    "objectID": "posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html",
+    "href": "posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html",
+    "title": "重力 弹力 摩擦力",
+    "section": "",
+    "text": "重力：由于地球吸引而使物体受到的力，方向竖直向下，大小为G=mg，这是最基本的力，任何在地球附近的物体都受重力。"
+  },
+  {
+    "objectID": "posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html#弹力",
+    "href": "posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html#弹力",
+    "title": "重力 弹力 摩擦力",
+    "section": "弹力",
+    "text": "弹力\n定义: 发生弹性形变的物体，由于要恢复原状，对与它接触的物体会产生力的作用，这种力叫做弹力\n\n\n\n\n\ngraph LR\nElasticForce(弹力) --&gt; Direction(作用方向)\nElasticForce --&gt; Condition(施力条件)\nDirection --&gt; SupportPressure(支持力与压力: 垂直接触面指向受力物体)\nDirection --&gt; Tension(拉力: 沿着绳子的收缩方向)\nSupportPressure --&gt; RecoveryDirection(与施力物体恢复形变的方向相同)\nTension --&gt; RecoveryDirection\n\nCondition --&gt; Conditions(1.相互接触\\n 2.弹性形变)\n\n\n%% 设置样式\nstyle RecoveryDirection fill:#f9f,stroke:#333,stroke-width:2px,color:#333\n\n\n\n\n\n\n\n\n\n\n\n\n重点\n\n\n\n\n接触面上的弹力方向判断：垂直接触面指向受力物体（P.S. 如果接触面是曲面，则垂直于曲面在触点的切面）\n弹力有无的判断方法\n\n\n条件法：根据弹力产生条件——物体是否直接接触并发生弹性形变\n假设法：假设两个物体间不存在弹力，看物体能否保持原有的状态，若运动状态不变，则此处没有弹力；若运动状态改变，则此处一定有弹力\n\n\n\n\n画出物理受到弹力的示意图 (从接触点开始画)\n\n\n\n\n练习\n关于如图中光滑球的受力情况，下列说法正确的是（　　）\n\nA. 甲球和斜斜面之间可能有弹力作用 B. 乙球和与其接触的小球间有弹力作用 C. 丙球和与其接触的小球间有弹力作用 D. 倾斜的细绳可能对丁球有拉力作用"
+  },
+  {
+    "objectID": "posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html#摩擦力",
+    "href": "posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html#摩擦力",
+    "title": "重力 弹力 摩擦力",
+    "section": "摩擦力",
+    "text": "摩擦力\n\n定义：两个相互接触的物体，当它们发生相对运动或具有相对运动的趋势时，在接触面上会产生阻碍相对运动或相对运动趋势的力.\n产生条件\n\n接触面粗糙\n接触处有压力\n两物体间有相对运动或相对运动趋势\n\n方向：与受力物体相对运动或相对运动趋势的方向相反\n大小：\n\n滑动摩擦力：F_{f}＝\\mu F_{N}，\\mu 为动摩擦因数\n静摩擦力：F_{f}\\in [0,f_{\\mathrm{max}}]\n\n\n\n\n\n\n\ngraph LR\nA(分析摩擦力)--&gt;B(方向);\nA--&gt;C(大小);\nB--&gt;B1(与相对运动或相对运动趋势相反);\nC--&gt;Ca(静摩擦);\nC--&gt;Cb(动摩擦);\nCa--&gt;Ca1(受力分析);\nCb--&gt;Cb1(套公式);\n\n\n\n\n\n\n\n练习\n(多选) 中国书法历史悠久，是中华民族优秀传统文化之一. 在楷书笔画中，长横的写法要领如下：起笔时一顿，然后向右行笔，收笔时略向右按，再向左上回带。某同学在水平桌面上平铺一张白纸，为防打滑，他在白纸的左侧靠近边缘处用镇纸压住，如图所示。则在向右行笔的过程中（ B D ）\n\n\nA. 镇纸受到向左的摩擦力 B. 毛笔受到向左的摩擦力 C. 白纸只受到向右的摩擦力 D. 桌面受到向右的摩擦力"
+  },
+  {
+    "objectID": "posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html#重力",
+    "href": "posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html#重力",
+    "title": "重力 弹力 摩擦力",
+    "section": "",
+    "text": "重力：由于地球吸引而使物体受到的力，方向竖直向下，大小为G=mg，这是最基本的力，任何在地球附近的物体都受重力。"
   }
 ]

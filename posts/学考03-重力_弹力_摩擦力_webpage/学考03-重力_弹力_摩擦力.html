@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="黄轶凡">
+<meta name="dcterms.date" content="2024-11-06">
 
-<title>iPhys</title>
+<title>重力 弹力 摩擦力 – iPhys</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,35 +68,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script>
     window.initFeatureLoader = async function() {
         console.log("Feature loader initialized");
@@ -148,6 +119,9 @@ ul.task-list li input[type="checkbox"] {
 </script>
 
 <script src="../../feature-loader.js" defer=""></script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -193,17 +167,17 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">iPhys</span>
     </a>
   </div>
@@ -214,7 +188,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -240,145 +214,172 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">iPhys</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="学考复习">学考复习 <span class="quarto-category-count">(3)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#重力" id="toc-重力" class="nav-link active" data-scroll-target="#重力">重力</a></li>
+  <li><a href="#弹力" id="toc-弹力" class="nav-link" data-scroll-target="#弹力">弹力</a></li>
+  <li><a href="#摩擦力" id="toc-摩擦力" class="nav-link" data-scroll-target="#摩擦力">摩擦力</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">重力 弹力 摩擦力</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">学考复习</div>
+  </div>
+  </div>
 
 
 
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>黄轶凡 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 6, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
+</header>
 
 
+<section id="重力" class="level2">
+<h2 class="anchored" data-anchor-id="重力">重力</h2>
+<p>重力：由于地球吸引而使物体受到的力，方向<u>竖直向下</u>，大小为<u><span class="math inline">G=mg</span></u>，这是最基本的力，任何在地球附近的物体都受重力。</p>
+</section>
+<section id="弹力" class="level2">
+<h2 class="anchored" data-anchor-id="弹力">弹力</h2>
+<p>定义: 发生弹性形变的物体，由于要恢复原状，对与它接触的物体会产生力的作用，这种力叫做弹力</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+ElasticForce(弹力) --&gt; Direction(作用方向)
+ElasticForce --&gt; Condition(施力条件)
+Direction --&gt; SupportPressure(支持力与压力: 垂直接触面指向受力物体)
+Direction --&gt; Tension(拉力: 沿着绳子的收缩方向)
+SupportPressure --&gt; RecoveryDirection(与施力物体恢复形变的方向相同)
+Tension --&gt; RecoveryDirection
+
+Condition --&gt; Conditions(1.相互接触\n 2.弹性形变)
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="学考复习" data-listing-date-sort="1730822400000" data-listing-file-modified-sort="1730868805562" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="83">
-<div class="thumbnail">
-<p><a href="./posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html" class="no-external"></a></p><a href="./posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html" class="no-external">
-<p class="card-img-top"><img src="posts/学考03-重力_弹力_摩擦力_webpage/assets/学考03-重力_弹力_摩擦力.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html" class="no-external"></a></p>
+%% 设置样式
+style RecoveryDirection fill:#f9f,stroke:#333,stroke-width:2px,color:#333
+</pre>
 </div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html" class="no-external">重力 弹力 摩擦力</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('学考复习'); return false;">
-学考复习
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html" class="no-external">重力：由于地球吸引而使物体受到的力，方向<u>竖直向下</u>，大小为<u><span class="math inline">G=mg</span></u>，这是最基本的力，任何在地球附近的物体都受重力。</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html" class="no-external">
-<div class="listing-date">
-Nov 6, 2024
-</div>
-<div class="listing-author">
-黄轶凡
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="学考复习" data-listing-date-sort="1729872000000" data-listing-file-modified-sort="1730857808197" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="185">
-<div class="thumbnail">
-<p><a href="./posts/学考01-运动的描述and匀变速直线运动_webpage/学考01-运动的描述and匀变速直线运动.html" class="no-external"></a></p><a href="./posts/学考01-运动的描述and匀变速直线运动_webpage/学考01-运动的描述and匀变速直线运动.html" class="no-external">
-<p class="card-img-top"><img src="posts/学考01-运动的描述and匀变速直线运动_webpage/assets/学考01-运动的描述and匀变速直线运动-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/学考01-运动的描述and匀变速直线运动_webpage/学考01-运动的描述and匀变速直线运动.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/学考01-运动的描述and匀变速直线运动_webpage/学考01-运动的描述and匀变速直线运动.html" class="no-external">运动的描述 匀变速直线运动</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/学考01-运动的描述and匀变速直线运动_webpage/学考01-运动的描述and匀变速直线运动.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('学考复习'); return false;">
-学考复习
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/学考01-运动的描述and匀变速直线运动_webpage/学考01-运动的描述and匀变速直线运动.html" class="no-external">如图所示，一小球在光滑水平面上从 <span class="math inline">A</span> 点开始向右运动，经过 <span class="math inline">3 s</span> 与距离 <span class="math inline">A</span> 点 <span class="math inline">6 m</span> 的竖直墙壁碰撞，碰撞时间很短，可忽略不计，碰后小球按原路以原速率返回. 取小球在 <span class="math inline">A</span> 点时为计时起点，并且取水平向右的方向为正方向，在 <span class="math inline">0\sim7 s</span> 内，小球的位移为 <u><span class="math inline">-2\; m</span></u>，路程为 <u><span class="math inline">14\; m</span></u>，速度的变化量为 <u><span class="math inline">-4\; m /s</span></u>。</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/学考01-运动的描述and匀变速直线运动_webpage/学考01-运动的描述and匀变速直线运动.html" class="no-external">
-<div class="listing-date">
-Oct 26, 2024
-</div>
-<div class="listing-author">
-黄轶凡
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="学考复习" data-listing-date-sort="1729872000000" data-listing-file-modified-sort="1730857811417" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="356">
-<div class="thumbnail">
-<p><a href="./posts/学考02-匀变速直线运动的规律_webpage/学考02-匀变速直线运动的规律.html" class="no-external"></a></p><a href="./posts/学考02-匀变速直线运动的规律_webpage/学考02-匀变速直线运动的规律.html" class="no-external">
-<p class="card-img-top"><img src="posts/学考02-匀变速直线运动的规律_webpage/assets/学考02-匀变速直线运动的规律.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/学考02-匀变速直线运动的规律_webpage/学考02-匀变速直线运动的规律.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/学考02-匀变速直线运动的规律_webpage/学考02-匀变速直线运动的规律.html" class="no-external">匀变速直线运动的的规律</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/学考02-匀变速直线运动的规律_webpage/学考02-匀变速直线运动的规律.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('学考复习'); return false;">
-学考复习
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/学考02-匀变速直线运动的规律_webpage/学考02-匀变速直线运动的规律.html" class="no-external">对某汽车刹车性能测试时，当汽车以 <span class="math inline">36 km/h</span> 的速率行驶时，可以在 <span class="math inline">18 m</span> 的距离被刹住；当以 <span class="math inline">54 km/h</span> 的速率行驶时，可以在 <span class="math inline">34.5 m</span> 的距离被刹住。假设两次测试中驾驶员的反应时间(驾驶员从看到障碍物到做出刹车动作的时间)与刹车的加速度都相同。问：</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/学考02-匀变速直线运动的规律_webpage/学考02-匀变速直线运动的规律.html" class="no-external">
-<div class="listing-date">
-Oct 26, 2024
-</div>
-<div class="listing-author">
-黄轶凡
-</div>
-</a>
+<p></p></figure><p></p>
 </div>
 </div>
 </div>
-<div class="listing-no-matching d-none">
-No matching items
+<div class="callout callout-style-default callout-tip callout-titled" title="重点">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</div></main> <!-- /main -->
+<div class="callout-title-container flex-fill">
+重点
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>接触面上的弹力方向判断</strong>：垂直接触面指向受力物体（P.S. 如果接触面是曲面，则垂直于曲面在触点的切面）</li>
+<li><strong>弹力有无的判断方法</strong></li>
+</ol>
+<ul>
+<li><strong>条件法</strong>：根据弹力产生条件——物体是否直接接触并发生弹性形变</li>
+<li><strong>假设法</strong>：假设两个物体间<u>不存在弹力</u>，看物体能否保持原有的状态，若运动状态不变，则此处没有弹力；若运动状态改变，则此处一定有弹力</li>
+</ul>
+</div>
+</div>
+<section id="画出物理受到弹力的示意图-从接触点开始画" class="level4">
+<h4 class="anchored" data-anchor-id="画出物理受到弹力的示意图-从接触点开始画">画出物理受到弹力的示意图 (从接触点开始画)</h4>
+<p><img src="./assets/学考03-重力_弹力_摩擦力.png" class="img-fluid"></p>
+<p><img src="./assets/学考03-重力_弹力_摩擦力-2.png" class="img-fluid"></p>
+</section>
+<section id="练习" class="level4">
+<h4 class="anchored" data-anchor-id="练习">练习</h4>
+<p>关于如图中光滑球的受力情况，下列说法正确的是（　　）</p>
+<p><img src="./assets/学考03-重力_弹力_摩擦力-3.png" class="img-fluid" width="500"></p>
+<p>A. 甲球和斜斜面之间可能有弹力作用<br> B. 乙球和与其接触的小球间有弹力作用<br> C. 丙球和与其接触的小球间有弹力作用<br> D. 倾斜的细绳可能对丁球有拉力作用</p>
+</section>
+</section>
+<section id="摩擦力" class="level2">
+<h2 class="anchored" data-anchor-id="摩擦力">摩擦力</h2>
+<ol type="1">
+<li>定义：两个相互接触的物体，当它们发生相对运动或具有相对运动的趋势时，在接触面上会产生阻碍<u>相对运动</u>或<u>相对运动趋势</u>的力.</li>
+<li>产生条件
+<ul>
+<li>接触面<u>粗糙</u></li>
+<li>接触处有<u>压力</u></li>
+<li>两物体间有<u>相对运动</u>或<u>相对运动趋势</u></li>
+</ul></li>
+<li>方向：<u>与受力物体相对运动或相对运动趋势的方向相反</u></li>
+<li>大小：
+<ul>
+<li>滑动摩擦力：<u><span class="math inline">F_{f}＝\mu F_{N}</span></u>，<span class="math inline">\mu</span> 为动摩擦因数</li>
+<li>静摩擦力：<span class="math inline">F_{f}\in</span> <span class="math inline">[0,f_{\mathrm{max}}]</span></li>
+</ul></li>
+</ol>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+A(分析摩擦力)--&gt;B(方向);
+A--&gt;C(大小);
+B--&gt;B1(与相对运动或相对运动趋势相反);
+C--&gt;Ca(静摩擦);
+C--&gt;Cb(动摩擦);
+Ca--&gt;Ca1(受力分析);
+Cb--&gt;Cb1(套公式);
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<section id="练习-1" class="level4">
+<h4 class="anchored" data-anchor-id="练习-1">练习</h4>
+<p>(多选) 中国书法历史悠久，是中华民族优秀传统文化之一. 在楷书笔画中，长横的写法要领如下：起笔时一顿，然后向右行笔，收笔时略向右按，再向左上回带。某同学在水平桌面上平铺一张白纸，为防打滑，他在白纸的左侧靠近边缘处用镇纸压住，如图所示。则在向右行笔的过程中（ <u>B D</u> ）</p>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>A. 镇纸受到向左的摩擦力<br> B. 毛笔受到向左的摩擦力<br> C. 白纸只受到向右的摩擦力<br> D. 桌面受到向右的摩擦力</p>
+</div><div class="column" style="width:30%;">
+<p><img src="./assets/学考03-重力_弹力_摩擦力-5.png" class="img-fluid"></p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
