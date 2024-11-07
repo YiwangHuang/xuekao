@@ -33,3 +33,9 @@ ol,ul,dl {
 iframe {
     margin-bottom: 0em;
 }
+
+/* 自动编号练习 */
+.exercise {
+    color: rgb(255, 155, 0);
+    font-weight: bold;
+}

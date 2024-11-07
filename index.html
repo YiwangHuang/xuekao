@@ -149,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="../../feature-loader.js" defer=""></script>
 
-  <script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -164,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
    });
 }}});
   </script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -308,7 +308,7 @@ Oct 26, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="学考复习" data-listing-date-sort="1729872000000" data-listing-file-modified-sort="1730941945176" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="460">
+<div class="quarto-post image-right" data-index="1" data-categories="学考复习" data-listing-date-sort="1729872000000" data-listing-file-modified-sort="1730942123952" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="460">
 <div class="thumbnail">
 <p><a href="./posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html" class="no-external"></a></p><a href="./posts/学考03-重力_弹力_摩擦力_webpage/学考03-重力_弹力_摩擦力.html" class="no-external">
 <p class="card-img-top"><img src="posts/学考03-重力_弹力_摩擦力_webpage/assets/学考03-重力_弹力_摩擦力.png"  class="thumbnail-image card-img"/></p>
@@ -379,6 +379,16 @@ Oct 26, 2024
 No matching items
 </div>
 </div></main> <!-- /main -->
+<script>
+// 查找所有 <h4> 标签中包含“练习”的文本，并自动编号
+document.querySelectorAll('h4').forEach((h4, index) => {
+  if (h4.textContent.includes("练习")) {
+    // 自动编号
+    h4.textContent = h4.textContent.replace("练习", `练习${index + 1}`);
+    h4.classList.add("exercise");
+  }
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

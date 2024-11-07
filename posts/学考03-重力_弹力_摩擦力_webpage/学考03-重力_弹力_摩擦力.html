@@ -123,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -138,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
    });
 }}});
   </script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -453,6 +453,16 @@ Cb--&gt;Cb1(套公式);
 </section>
 
 </main> <!-- /main -->
+<script>
+// 查找所有 <h4> 标签中包含“练习”的文本，并自动编号
+document.querySelectorAll('h4').forEach((h4, index) => {
+  if (h4.textContent.includes("练习")) {
+    // 自动编号
+    h4.textContent = h4.textContent.replace("练习", `练习${index + 1}`);
+    h4.classList.add("exercise");
+  }
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
