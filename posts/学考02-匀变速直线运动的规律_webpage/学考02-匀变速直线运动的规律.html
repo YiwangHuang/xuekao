@@ -9,7 +9,7 @@
 <meta name="author" content="黄轶凡">
 <meta name="dcterms.date" content="2024-10-26">
 
-<title>匀变速直线运动的的规律 – iPhys</title>
+<title>quarto-input9a731c02a4b05597 – iPhys</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -120,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="../../feature-loader.js" defer=""></script>
 
-  <script defer="" src="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.js"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -135,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
    });
 }}});
   </script>
-  <link rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -234,7 +234,6 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">匀变速直线运动的的规律</h1>
   <div class="quarto-categories">
     <div class="quarto-category">学考复习</div>
   </div>
@@ -507,6 +506,16 @@ t=15s
 </section>
 
 </main> <!-- /main -->
+<script>
+// 查找所有 <h4> 标签中包含“练习”的文本，并自动编号
+document.querySelectorAll('h4').forEach((h4, index) => {
+  if (h4.textContent.includes("练习")) {
+    // 自动编号
+    h4.textContent = h4.textContent.replace("练习", `练习${index + 1}`);
+    h4.classList.add("exercise");
+  }
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
