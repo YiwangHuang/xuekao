@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="黄轶凡">
-<meta name="dcterms.date" content="2024-11-06">
+<meta name="dcterms.date" content="2024-10-26">
 
 <title>重力 弹力 摩擦力 – iPhys</title>
 <style>
@@ -123,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script defer="" src="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.js"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -138,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
    });
 }}});
   </script>
-  <link rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -223,7 +223,10 @@ window.Quarto = {
    
   <ul>
   <li><a href="#重力" id="toc-重力" class="nav-link active" data-scroll-target="#重力">重力</a></li>
-  <li><a href="#弹力" id="toc-弹力" class="nav-link" data-scroll-target="#弹力">弹力</a></li>
+  <li><a href="#弹力" id="toc-弹力" class="nav-link" data-scroll-target="#弹力">弹力</a>
+  <ul class="collapse">
+  <li><a href="#弹簧弹力" id="toc-弹簧弹力" class="nav-link" data-scroll-target="#弹簧弹力">弹簧弹力</a></li>
+  </ul></li>
   <li><a href="#摩擦力" id="toc-摩擦力" class="nav-link" data-scroll-target="#摩擦力">摩擦力</a></li>
   </ul>
 </nav>
@@ -253,7 +256,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 6, 2024</p>
+      <p class="date">October 26, 2024</p>
     </div>
   </div>
   
@@ -265,9 +268,52 @@ window.Quarto = {
 </header>
 
 
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>备考指导</th>
+<th>试题情境</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. 本章内容多以选择题形式出现，中低难度，常考弹力、摩擦力的理解及计算，对物体进行受力分析及力的合成和分解；<br>2. 共点力的平衡条件是高中物理的主干知识，受力分析是解综合问题的关键步骤之一</td>
+<td>1. 生活实践类：生活中的摩擦力的应用，索桥、千斤顶、刀、木楔等的工作原理；<br>2. 学习探究类：探究弹簧弹力与形变量的关系，探究两个互成角度的力的合成规律，共点力平衡条件及应用，平衡中的临界问题。<br></td>
+</tr>
+</tbody>
+</table>
 <section id="重力" class="level2">
 <h2 class="anchored" data-anchor-id="重力">重力</h2>
-<p>重力：由于地球吸引而使物体受到的力，方向<u>竖直向下</u>，大小为<u><span class="math inline">G=mg</span></u>，这是最基本的力，任何在地球附近的物体都受重力。</p>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ol type="1">
+<li>概念：由于地球吸引而使物体受到的力，方向<u>竖直向下</u>，大小为<u><span class="math inline">G=mg</span></u></li>
+<li>重心：物体的各部分都受重力作用，可认为重力集中作用于一点，即物体的重心
+<ul>
+<li>影响重心位置的因素：物体的几何形状，物体的<u>质量</u>分布；</li>
+<li>不规则薄板形物体重心的确定方法：<u>悬挂法</u>。</li>
+</ul></li>
+</ol>
+</div><div class="column" style="width:30%;">
+<p><img src="./assets/学考03-重力_弹力_摩擦力.png" class="img-fluid"></p>
+</div>
+</div>
+<section id="判断" class="level4">
+<h4 class="anchored" data-anchor-id="判断">判断</h4>
+<ol type="1">
+<li>形状规则的物体的重心一定在物体的几何中心 ( <u>错</u> )</li>
+<li>在地球表面的位置，重力加速度 <span class="math inline">g</span> 的大小都一样 ( <u>错</u> )</li>
+</ol>
+</section>
+<section id="练习" class="level4">
+<h4 class="anchored" data-anchor-id="练习">练习</h4>
+<p>一质量分布均匀的物块用两根轻绳吊起处于静止状态，下列合理的是 ( <u>D</u> )</p>
+<p><img src="./assets/学考03-重力_弹力_摩擦力-7.png" class="img-fluid" width="500"></p>
+</section>
 </section>
 <section id="弹力" class="level2">
 <h2 class="anchored" data-anchor-id="弹力">弹力</h2>
@@ -278,15 +324,13 @@ window.Quarto = {
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">graph LR
-ElasticForce(弹力) --&gt; Direction(作用方向)
 ElasticForce --&gt; Condition(施力条件)
+ElasticForce(弹力) --&gt; Direction(作用方向)
+Condition --&gt; Conditions(1.相互接触\n 2.弹性形变)
 Direction --&gt; SupportPressure(支持力与压力: 垂直接触面指向受力物体)
 Direction --&gt; Tension(拉力: 沿着绳子的收缩方向)
 SupportPressure --&gt; RecoveryDirection(与施力物体恢复形变的方向相同)
 Tension --&gt; RecoveryDirection
-
-Condition --&gt; Conditions(1.相互接触\n 2.弹性形变)
-
 
 %% 设置样式
 style RecoveryDirection fill:#f9f,stroke:#333,stroke-width:2px,color:#333
@@ -296,36 +340,43 @@ style RecoveryDirection fill:#f9f,stroke:#333,stroke-width:2px,color:#333
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="重点">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-重点
-</div>
-</div>
-<div class="callout-body-container callout-body">
 <ol type="1">
-<li><strong>接触面上的弹力方向判断</strong>：垂直接触面指向受力物体（P.S. 如果接触面是曲面，则垂直于曲面在触点的切面）</li>
-<li><strong>弹力有无的判断方法</strong></li>
+<li><strong>接触面上的弹力方向判断</strong>：<u>垂直接触面指向受力物体</u></li>
 </ol>
+<p><img src="./assets/学考03-重力_弹力_摩擦力-2.png" class="img-fluid"></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol start="2" type="1">
+<li><strong>弹力有无的判断方法</strong>
 <ul>
 <li><strong>条件法</strong>：根据弹力产生条件——物体是否直接接触并发生弹性形变</li>
-<li><strong>假设法</strong>：假设两个物体间<u>不存在弹力</u>，看物体能否保持原有的状态，若运动状态不变，则此处没有弹力；若运动状态改变，则此处一定有弹力</li>
-</ul>
+<li><strong>假设法</strong>：假设两个物体间 (存在弹力/不存在弹力)，看物体能否保持原有的状态</li>
+</ul></li>
+</ol>
+</div><div class="column" style="width:50%;">
+<p><img src="./assets/学考03-重力_弹力_摩擦力-8.png" class="img-fluid"></p>
 </div>
 </div>
-<section id="画出物理受到弹力的示意图-从接触点开始画" class="level4">
-<h4 class="anchored" data-anchor-id="画出物理受到弹力的示意图-从接触点开始画">画出物理受到弹力的示意图 (从接触点开始画)</h4>
-<p><img src="./assets/学考03-重力_弹力_摩擦力.png" class="img-fluid"></p>
-<p><img src="./assets/学考03-重力_弹力_摩擦力-2.png" class="img-fluid"></p>
-</section>
-<section id="练习" class="level4">
-<h4 class="anchored" data-anchor-id="练习">练习</h4>
+<section id="练习-1" class="level4">
+<h4 class="anchored" data-anchor-id="练习-1">练习</h4>
 <p>关于如图中光滑球的受力情况，下列说法正确的是（　　）</p>
-<p><img src="./assets/学考03-重力_弹力_摩擦力-3.png" class="img-fluid" width="500"></p>
+<p><img src="./assets/学考03-重力_弹力_摩擦力-4.png" class="img-fluid" width="500"></p>
 <p>A. 甲球和斜斜面之间可能有弹力作用<br> B. 乙球和与其接触的小球间有弹力作用<br> C. 丙球和与其接触的小球间有弹力作用<br> D. 倾斜的细绳可能对丁球有拉力作用</p>
+</section>
+<section id="弹簧弹力" class="level3">
+<h3 class="anchored" data-anchor-id="弹簧弹力">弹簧弹力</h3>
+<p><span class="math inline">F=kx</span></p>
+<section id="练习-2" class="level4">
+<h4 class="anchored" data-anchor-id="练习-2">练习</h4>
+<p>如图所示的装置中，各小球的质量均相同，弹簧和细线的质量均不计，一切摩擦忽略不计，平衡时各弹簧的弹力大小分别为 <span class="math inline">F_1</span>、<span class="math inline">F_2</span>、<span class="math inline">F_3</span>，其大小关系是</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>A. <span class="math inline">F_{1}=F_{2}=F_{3}</span>    B. <span class="math inline">F_{1}=F_{2}&lt;F_{3}</span> <br> C. <span class="math inline">F_{1}=F_{3}&gt;F_{2}</span>    D. <span class="math inline">F_{3}&gt;F_{1}&gt;F_{2}</span></p>
+</div><div class="column" style="width:40%;">
+<p><img src="./assets/学考03-重力_弹力_摩擦力-9.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
 </section>
 </section>
 <section id="摩擦力" class="level2">
@@ -341,7 +392,7 @@ style RecoveryDirection fill:#f9f,stroke:#333,stroke-width:2px,color:#333
 <li>方向：<u>与受力物体相对运动或相对运动趋势的方向相反</u></li>
 <li>大小：
 <ul>
-<li>滑动摩擦力：<u><span class="math inline">F_{f}＝\mu F_{N}</span></u>，<span class="math inline">\mu</span> 为动摩擦因数</li>
+<li>滑动摩擦力：<u><span class="math inline">F_{f}＝\mu F_{N}</span></u>；<span class="math inline">\mu</span> 为动摩擦因数，<span class="math inline">\mu</span> 只与接触面的<u>粗糙程度</u>有关，与<u>接触面积</u>无关</li>
 <li>静摩擦力：<span class="math inline">F_{f}\in</span> <span class="math inline">[0,f_{\mathrm{max}}]</span></li>
 </ul></li>
 </ol>
@@ -364,14 +415,36 @@ Cb--&gt;Cb1(套公式);
 </div>
 </div>
 </div>
-<section id="练习-1" class="level4">
-<h4 class="anchored" data-anchor-id="练习-1">练习</h4>
-<p>(多选) 中国书法历史悠久，是中华民族优秀传统文化之一. 在楷书笔画中，长横的写法要领如下：起笔时一顿，然后向右行笔，收笔时略向右按，再向左上回带。某同学在水平桌面上平铺一张白纸，为防打滑，他在白纸的左侧靠近边缘处用镇纸压住，如图所示。则在向右行笔的过程中（ <u>B D</u> ）</p>
+<p><img src="./assets/学考03-重力_弹力_摩擦力-5.png" class="img-fluid"></p>
+<section id="判断-1" class="level4">
+<h4 class="anchored" data-anchor-id="判断-1">判断</h4>
+<ol type="1">
+<li>滑动摩擦力的方向与物体的运动方向一定相反 ( <u>错</u> )</li>
+<li>静摩擦力可能是动力，滑动摩擦力一定是阻力 ( <u>错</u> )</li>
+<li>运动的物体不可能受到静摩擦力作用 ( <u>错</u> )</li>
+<li>受静摩擦力作用的物体一定处于静止状态 ( <u>错</u> )</li>
+<li>正压力越大，摩擦力可能越大，也可能不变 ( <u>对</u> )</li>
+<li>滑动摩擦力与接触面积有关，相同材料的两物体接触面积越大，滑动摩擦力越大 ( <u>错</u> )</li>
+</ol>
+</section>
+<section id="摩擦力方向的判断" class="level4">
+<h4 class="anchored" data-anchor-id="摩擦力方向的判断">摩擦力方向的判断</h4>
+<p><img src="./assets/学考03-重力_弹力_摩擦力-10.png" class="img-fluid"></p>
+<p><img src="./assets/学考03-重力_弹力_摩擦力-11.png" class="img-fluid"></p>
+<p><img src="./assets/学考03-重力_弹力_摩擦力-12.png" class="img-fluid"></p>
+</section>
+<section id="练习-3" class="level4">
+<h4 class="anchored" data-anchor-id="练习-3">练习</h4>
+<p>某同学练习书法，他在水平桌面上平铺一张白纸，为防打滑，他在白纸的左侧靠近边缘处用镇纸压住，如图所示。在书写“长横”向右行笔的过程中，分析各接触面间的摩擦力：</p>
 <div class="columns">
 <div class="column" style="width:70%;">
-<p>A. 镇纸受到向左的摩擦力<br> B. 毛笔受到向左的摩擦力<br> C. 白纸只受到向右的摩擦力<br> D. 桌面受到向右的摩擦力</p>
+<ol type="1">
+<li>毛笔对白纸的摩擦？<u>毛笔对白纸的摩擦力向右</u></li>
+<li>桌面对白纸的摩擦？<u>桌面对白纸的摩擦力向左</u></li>
+<li>镇纸对白纸的摩擦？<u>镇纸与白纸间没有摩擦力</u></li>
+</ol>
 </div><div class="column" style="width:30%;">
-<p><img src="./assets/学考03-重力_弹力_摩擦力-5.png" class="img-fluid"></p>
+<p><img src="./assets/学考03-重力_弹力_摩擦力-6.png" class="img-fluid"></p>
 </div>
 </div>
 
