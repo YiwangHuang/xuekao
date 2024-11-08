@@ -374,6 +374,16 @@ window.Quarto = {
 </section>
 
 </main> <!-- /main -->
+<script>
+// 查找所有 <h4> 标签中包含“练习”的文本，并自动编号
+document.querySelectorAll('h4').forEach((h4, index) => {
+  if (h4.textContent.includes("练习")) {
+    // 自动编号
+    h4.textContent = h4.textContent.replace("练习", `练习${index + 1}`);
+    h4.classList.add("exercise");
+  }
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
