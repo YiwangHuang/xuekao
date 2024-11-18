@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="黄轶凡">
-<meta name="dcterms.date" content="2024-10-20">
+<meta name="dcterms.date" content="2024-11-18">
 
-<title>学考01-运动的描述and匀变速直线运动 – iPhys</title>
+<title>学考07-牛顿三定律 – iPhys</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -219,9 +219,21 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#质点参考系和位移" id="toc-质点参考系和位移" class="nav-link active" data-scroll-target="#质点参考系和位移">质点、参考系和位移</a></li>
-  <li><a href="#平均速度-瞬时速度" id="toc-平均速度-瞬时速度" class="nav-link" data-scroll-target="#平均速度-瞬时速度">平均速度 瞬时速度</a></li>
-  <li><a href="#加速度" id="toc-加速度" class="nav-link" data-scroll-target="#加速度">加速度</a></li>
+  <li><a href="#牛顿第一定律" id="toc-牛顿第一定律" class="nav-link active" data-scroll-target="#牛顿第一定律">牛顿第一定律</a>
+  <ul class="collapse">
+  <li><a href="#牛顿第一定律-1" id="toc-牛顿第一定律-1" class="nav-link" data-scroll-target="#牛顿第一定律-1">牛顿第一定律</a></li>
+  <li><a href="#惯性" id="toc-惯性" class="nav-link" data-scroll-target="#惯性">惯性</a></li>
+  </ul></li>
+  <li><a href="#牛顿第二定律" id="toc-牛顿第二定律" class="nav-link" data-scroll-target="#牛顿第二定律">牛顿第二定律</a>
+  <ul class="collapse">
+  <li><a href="#牛顿第二定律-1" id="toc-牛顿第二定律-1" class="nav-link" data-scroll-target="#牛顿第二定律-1">牛顿第二定律</a></li>
+  <li><a href="#力学单位制" id="toc-力学单位制" class="nav-link" data-scroll-target="#力学单位制">力学单位制</a></li>
+  </ul></li>
+  <li><a href="#牛顿第三定律" id="toc-牛顿第三定律" class="nav-link" data-scroll-target="#牛顿第三定律">牛顿第三定律</a>
+  <ul class="collapse">
+  <li><a href="#牛顿第三定律-1" id="toc-牛顿第三定律-1" class="nav-link" data-scroll-target="#牛顿第三定律-1">牛顿第三定律</a></li>
+  <li><a href="#一对平衡力与作用力和反作用力的比较" id="toc-一对平衡力与作用力和反作用力的比较" class="nav-link" data-scroll-target="#一对平衡力与作用力和反作用力的比较">一对平衡力与作用力和反作用力的比较</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -230,7 +242,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">学考01-运动的描述and匀变速直线运动</h1>
+<h1 class="title">学考07-牛顿三定律</h1>
   <div class="quarto-categories">
     <div class="quarto-category">学考复习</div>
   </div>
@@ -250,7 +262,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 20, 2024</p>
+      <p class="date">November 18, 2024</p>
     </div>
   </div>
   
@@ -262,110 +274,135 @@ window.Quarto = {
 </header>
 
 
-<section id="质点参考系和位移" class="level2">
-<h2 class="anchored" data-anchor-id="质点参考系和位移">质点、参考系和位移</h2>
+<section id="牛顿第一定律" class="level2">
+<h2 class="anchored" data-anchor-id="牛顿第一定律">牛顿第一定律</h2>
+<section id="牛顿第一定律-1" class="level3">
+<h3 class="anchored" data-anchor-id="牛顿第一定律-1">牛顿第一定律</h3>
 <ol type="1">
-<li>质点
+<li>内容：一切物体总保持<u>匀速直线运动</u>状态或静止状态，除非作用在它上面的力迫使它改变这种状态。</li>
+<li>意义：
 <ul>
-<li>质点是用来代替物体的具有质量的点，质点是一种<u>理想化</u>模型</li>
-<li>把物体看作质点的条件: 物体的<u>形状</u>和<u>大小</u>对所研究问题的影响可以忽略不计</li>
-</ul></li>
-<li>参考系：在描述物体运动时，用来作为参考的物体，通常以<u>地面</u>为参考系</li>
-<li>时刻和时间间隔
-<ul>
-<li>时刻：指某一瞬间，在时间轴上用<u>一个点</u>来表示</li>
-<li>时间间隔：两个时刻的间隔，在时间坐标轴上用<u>一条线段</u>来表示</li>
+<li>揭示了物体的固有属性：一切物体都具有<u>惯性</u>，因此牛顿第一定律又被叫作<u>惯性</u>定律；</li>
+<li>揭示了运动和力的关系：力不是<u>维持</u>物体运动的原因，而是改变物体运动状态的原因，即力是<u>加速度</u>产生的原因。</li>
 </ul></li>
 </ol>
-<p><img src="./assets/学考01-运动的描述and匀变速直线运动-1.png" class="img-fluid"></p>
-<ol start="4" type="1">
-<li>路程和位移
-<ul>
-<li>路程是物体<u>运动轨迹</u>的长度，它是<u>标</u>量</li>
-<li>位移是由初位置指向末位置的<u>有向线段</u>，它是<u>矢</u>量</li>
-<li>在单向直线运动中，位移的大小<u>等于</u>路程；其他情况下，位移的大小<u>小于</u>路程</li>
-</ul></li>
+</section>
+<section id="惯性" class="level3">
+<h3 class="anchored" data-anchor-id="惯性">惯性</h3>
+<ol type="1">
+<li>定义：物体具有保持原来<u>匀速直线运动</u>状态或静止状态的性质；</li>
+<li>量度：<u>质量</u>是惯性大小的唯一量度；</li>
+<li>普遍性：惯性是物体的固有属性，一切物体都具有惯性，与物体的运动情况和受力情况无关。</li>
 </ol>
 <section id="判断" class="level4">
 <h4 class="anchored" data-anchor-id="判断">判断</h4>
 <ol type="1">
-<li>质点是一种理想化模型，实际并不存在( <u>对</u> )</li>
-<li>体积很大的物体，一定不能视为质点( <u>错</u> )</li>
-<li>参考系必须选择静止不动的物体( <u>错</u> )</li>
-<li>做直线运动的物体，其位移大小一定等于路程( <u>错</u> )</li>
+<li>牛顿第一定律是实验定律 ( <u>错</u> )</li>
+<li>运动的物体惯性大，静止的物体惯性小 ( <u>错</u> )</li>
+<li>物体不受力时，将处于静止状态或匀速直线运动状态 ( <u>对</u> )</li>
 </ol>
-</section>
-</section>
-<section id="平均速度-瞬时速度" class="level2">
-<h2 class="anchored" data-anchor-id="平均速度-瞬时速度">平均速度 瞬时速度</h2>
-<ol type="1">
-<li>平均速度：物体发生的位移与发生这段位移所用时间之比，即 <u><span class="math inline">\bar{v}=\frac{\Delta x}{\Delta t}</span></u>，是<u>矢</u>量，其方向就是对应<u>位移</u>的方向</li>
-<li>瞬时速度：运动物体在<u>某一时刻</u>或经过<u>某一位置</u>的速度，是矢量，其方向是物体在这一时刻的运动方向或运动轨迹的<u>切线</u>方向</li>
-<li>速率：<u>瞬时速度</u>的大小，是标量.</li>
-<li>平均速率：物体运动的路程与通过这段路程所用时间的比值，平均速率<u>大于等于</u>平均速度的大小</li>
-</ol>
-<section id="判断-1" class="level4">
-<h4 class="anchored" data-anchor-id="判断-1">判断</h4>
-<ol type="1">
-<li>瞬时速度的方向就是物体在该时刻或该位置的运动方向( <u>对</u> )</li>
-<li>一个物体在一段时间内的平均速度为 <span class="math inline">0</span>，平均速率也一定为 <span class="math inline">0</span> ( <u>错</u> )</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="平均速度和瞬时速度的区别和联系">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-平均速度和瞬时速度的区别和联系
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>区别：平均速度表示物体在某段时间或某段位移内运动的平均快慢程度；瞬时速度表示物体在某一时刻或某一位置运动的快慢程度。</li>
-<li>联系：<strong>瞬时速度是运动时间</strong> <span class="math inline">\Delta t\rightarrow 0</span> 时的平均速度，公式 <span class="math inline">\bar{v}=\frac{\Delta x}{\Delta t}</span> 中，当 <span class="math inline">\Delta t\rightarrow0</span> 时 <span class="math inline">v</span> 是瞬时速度</li>
-</ul>
-</div>
-</div>
-</section>
-</section>
-<section id="加速度" class="level2">
-<h2 class="anchored" data-anchor-id="加速度">加速度</h2>
-<ol type="1">
-<li>物理意义：描述物体速度<u>变化快慢</u>的物理量</li>
-<li>定义：物体<u>速度的变化量</u>和发生这一变化所用时间之比
-<ul>
-<li>定义式：<u><span class="math inline">a=\frac{\Delta v}{\Delta t}</span></u> ，单位：<u><span class="math inline">\mathrm{m /s^{2}}</span></u></li>
-</ul></li>
-<li>方向：与 <u><span class="math inline">\Delta v</span></u> 的方向一致，由<u>合力</u>的方向决定，而与 <span class="math inline">v</span> 的方向<u>无关</u>(填“有关”或“无关”)，是矢量</li>
-</ol>
-<section id="判断-2" class="level4">
-<h4 class="anchored" data-anchor-id="判断-2">判断</h4>
-<ol type="1">
-<li>物体的速度很大，加速度一定不为零( <u>错</u> )</li>
-<li>物体的速度为零，加速度可能很大( <u>对</u> )</li>
-<li>甲的加速度 <span class="math inline">a_{甲}＝2 m /s^{2}</span>，乙的加速度 <span class="math inline">a_{乙}＝-3 m /s^{2}</span>，<span class="math inline">a_{甲}&gt;a_{乙}</span> ( <u>错</u> )</li>
-<li>物体的加速度增大，速度一定增大( <u>错</u> )</li>
-</ol>
-</section>
-<section id="例题" class="level4">
-<h4 class="anchored" data-anchor-id="例题">例题</h4>
-<div class="columns">
-<div class="column" style="width:70%;">
-<p>如图所示，一小球在光滑水平面上从 <span class="math inline">A</span> 点开始向右运动，经过 <span class="math inline">3 s</span> 与距离 <span class="math inline">A</span> 点 <span class="math inline">6 m</span> 的竖直墙壁碰撞，碰撞时间很短，可忽略不计，碰后小球按原路以原速率返回. 取小球在 <span class="math inline">A</span> 点时为计时起点，并且取水平向右的方向为正方向，在 <span class="math inline">0\sim7 s</span> 内，小球的位移为 <u><span class="math inline">-2\; m</span></u>，路程为 <u><span class="math inline">14\; m</span></u>，速度的变化量为 <u><span class="math inline">-4\; m /s</span></u>。</p>
-</div><div class="column" style="width:30%;">
-<p><img src="./assets/学考01-运动的描述and匀变速直线运动.png" class="img-fluid"></p>
-</div>
-</div>
 </section>
 <section id="练习" class="level4">
 <h4 class="anchored" data-anchor-id="练习">练习</h4>
-<p>物从离墙壁 <span class="math inline">x_1 = 5.0m</span> 的位置由静止开始沿着水平向右朝墙壁做加速直线运动，经过 <span class="math inline">t_1 = 1</span>. <span class="math inline">0 s</span>，以 <span class="math inline">v_1 =10 m/s</span> 的速度与墙壁发生碰撞，碰撞时间 <span class="math inline">t= 0.2 s</span>，然后以 <span class="math inline">v_2 = 8 m/s</span> 反弹，反弹后水平向左做减速直线运动，经过 <span class="math inline">t_2 = 0.8 s</span>，在离墙壁距离 <span class="math inline">x_2 = 3.2 m</span> 的位置停下。则：</p>
+<p>对一些生活中的现象，某同学试图从惯性角度加以分析。其中正确的是( <u>B</u> )</p>
+<p>A. 太空中处于失重状态的物体没有惯性<br> B. “安全带，生命带，前排后排都要系”，系好安全带可以防止因人的惯性而造成的伤害<br> C. “强弩之末，势不能穿鲁缟”，是因为强弩的惯性减小了<br> D. 战斗机作战前抛掉副油箱，是为了增大战斗机的惯性</p>
+</section>
+</section>
+</section>
+<section id="牛顿第二定律" class="level2">
+<h2 class="anchored" data-anchor-id="牛顿第二定律">牛顿第二定律</h2>
+<section id="牛顿第二定律-1" class="level3">
+<h3 class="anchored" data-anchor-id="牛顿第二定律-1">牛顿第二定律</h3>
 <ol type="1">
-<li>物体与墙壁碰撞过程的加速度大小和方向；</li>
-<li>整个过程物体的平均速度。</li>
+<li>内容：物体加速度的大小跟它受到的作用力成正比、跟它的质量成反比，加速度的方向跟作用力的方向相同。</li>
+<li>表达式：<span class="math inline">F＝ma</span></li>
 </ol>
+</section>
+<section id="力学单位制" class="level3">
+<h3 class="anchored" data-anchor-id="力学单位制">力学单位制</h3>
+<ol type="1">
+<li>单位制：基本单位和导出单位一起组成了单位制；</li>
+<li>基本单位：基本物理量的单位。国际单位制中基本物理量共七个，其中力学有三个，是<u>长度</u>、<u>质量</u>、<u>时间</u>，单位分别是<u>米</u>、<u>千克</u>、<u>秒</u>；</li>
+<li>导出单位：由基本物理量根据推导出来的其他物理量的单位。</li>
+</ol>
+<section id="练习-1" class="level4">
+<h4 class="anchored" data-anchor-id="练习-1">练习</h4>
+<div class="columns">
+<div class="column" style="width:85%;">
+<p>某人想测量地铁列车运行的加速度，如图所示。他将一根细绳的下端绑着圆珠笔，上端临时固定在竖直扶手上。在地铁的某段加速过程中，细绳与竖直方向夹角为 <span class="math inline">\theta</span>，则此时地铁的加速度为 <u><span class="math inline">g\tan \theta</span></u></p>
+</div><div class="column" style="width:15%;">
+<p><img src="./assets/学考07-牛顿三定律-2.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="练习-2" class="level4">
+<h4 class="anchored" data-anchor-id="练习-2">练习</h4>
+<p>在加速度大小为 <span class="math inline">a</span> 的减速下降的电梯中，有一质量为 <span class="math inline">m</span> 的人，此人对电梯压力大小为 <u><span class="math inline">m(g+a)</span></u>，处于<u>超重</u>(填“超重”/“失重”)状态</p>
+</section>
+<section id="练习-3" class="level4">
+<h4 class="anchored" data-anchor-id="练习-3">练习</h4>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>如图所示，在卸货过程中，自动卸货车静止在水平地面上，车厢倾角 <span class="math inline">\theta= 37^{\circ}</span> 时，货箱正沿车厢下滑，已知货箱与车厢间的动摩擦因数为 <span class="math inline">0.5</span>。<span class="math inline">\sin 37^{\circ} =0.6</span>，<span class="math inline">\cos 37^{\circ}=0.8</span>。<span class="math inline">g</span> 取 <span class="math inline">10\; m /s^{2}</span>，则货箱下滑的加速度大小为 <u><span class="math inline">2\; m / s^{2}</span></u>。</p>
+</div><div class="column" style="width:30%;">
+<p><img src="./assets/学考07-牛顿三定律.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="牛顿第三定律" class="level2">
+<h2 class="anchored" data-anchor-id="牛顿第三定律">牛顿第三定律</h2>
+<section id="牛顿第三定律-1" class="level3">
+<h3 class="anchored" data-anchor-id="牛顿第三定律-1">牛顿第三定律</h3>
+<p>两个物体之间的作用力和反作用力总是大小<u>相等</u>，方向<u>相反</u>，作用在<u>同一条</u>直线上。</p>
+</section>
+<section id="一对平衡力与作用力和反作用力的比较" class="level3">
+<h3 class="anchored" data-anchor-id="一对平衡力与作用力和反作用力的比较">一对平衡力与作用力和反作用力的比较</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>一对平衡力</th>
+<th>作用力和反作用力</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>作用对象</td>
+<td>同一个物体</td>
+<td>两个相互作用的不同物体</td>
+</tr>
+<tr class="even">
+<td>作用时间</td>
+<td>不一定同时产生，同时消失</td>
+<td>一定同时产生，同时消失</td>
+</tr>
+<tr class="odd">
+<td>力的性质</td>
+<td>不一定相同</td>
+<td>一定相同</td>
+</tr>
+<tr class="even">
+<td>作用效果</td>
+<td>可相互抵消</td>
+<td>不可抵消</td>
+</tr>
+</tbody>
+</table>
+<section id="练习-4" class="level4">
+<h4 class="anchored" data-anchor-id="练习-4">练习</h4>
+<div class="columns">
+<div class="column" style="width:85%;">
+<p>(多选) 如图所示，用水平力 <span class="math inline">F</span> 把一个物体紧压在竖直墙壁上，物体保持静止，下列说法中正确的是 ( <u>B D</u> )</p>
+<p>A. 水平力 <span class="math inline">F</span> 与墙壁对物体的弹力是一对作用力与反作用力<br> B. 物体的重力与墙壁对物体的静摩擦力是一对平衡力<br> C. 水平力 <span class="math inline">F</span> 与物体对墙壁的压力是一对作用力与反作用力<br> D. 物体对墙壁的压力与墙壁对物体的弹力是一对作用力与反作用力</p>
+</div><div class="column" style="width:15%;">
+<p><img src="./assets/学考07-牛顿三定律-1.png" class="img-fluid"></p>
+</div>
+</div>
 
 
+</section>
 </section>
 </section>
 

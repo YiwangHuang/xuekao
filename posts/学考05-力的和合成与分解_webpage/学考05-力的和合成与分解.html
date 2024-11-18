@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="黄轶凡">
-<meta name="dcterms.date" content="2024-11-11">
+<meta name="dcterms.date" content="2024-11-09">
 
-<title>力的合成与分解 – iPhys</title>
+<title>学考05-力的和合成与分解 – iPhys</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -233,7 +233,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">力的合成与分解</h1>
+<h1 class="title">学考05-力的和合成与分解</h1>
   <div class="quarto-categories">
     <div class="quarto-category">学考复习</div>
   </div>
@@ -253,7 +253,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 11, 2024</p>
+      <p class="date">November 9, 2024</p>
     </div>
   </div>
   
@@ -379,12 +379,15 @@ Tip
 
 </main> <!-- /main -->
 <script>
+  var exerciseIndex = 1;
 // 查找所有 <h4> 标签中包含“练习”的文本，并自动编号
-document.querySelectorAll('h4').forEach((h4, index) => {
-  if (h4.textContent.includes("练习")) {
+  document.querySelectorAll('h4').forEach((h4) => {
+  // 使用正则表达式进行精确匹配，确保只有包含“练习”的文本才会编号
+    if (h4.textContent.includes("练习")) {
     // 自动编号
-    h4.textContent = h4.textContent.replace("练习", `练习${index + 1}`);
+    h4.textContent = h4.textContent.replace("练习", `练习${exerciseIndex}`);
     h4.classList.add("exercise");
+    exerciseIndex += 1;
   }
 });
 </script>

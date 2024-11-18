@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="黄轶凡">
-<meta name="dcterms.date" content="2024-11-09">
+<meta name="dcterms.date" content="2024-10-27">
 
-<title>重力 弹力 摩擦力 – iPhys</title>
+<title>学考03-重力_弹力_摩擦力 – iPhys</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -225,7 +225,8 @@ window.Quarto = {
   <li><a href="#重力" id="toc-重力" class="nav-link active" data-scroll-target="#重力">重力</a></li>
   <li><a href="#弹力" id="toc-弹力" class="nav-link" data-scroll-target="#弹力">弹力</a>
   <ul class="collapse">
-  <li><a href="#接触面上的弹力方向判断垂直接触面指向受力物体" id="toc-接触面上的弹力方向判断垂直接触面指向受力物体" class="nav-link" data-scroll-target="#接触面上的弹力方向判断垂直接触面指向受力物体">接触面上的弹力方向判断：<u>垂直接触面指向受力物体</u></a></li>
+  <li><a href="#接触面上的弹力方向判断" id="toc-接触面上的弹力方向判断" class="nav-link" data-scroll-target="#接触面上的弹力方向判断">接触面上的弹力方向判断</a></li>
+  <li><a href="#弹力有无的判断方法" id="toc-弹力有无的判断方法" class="nav-link" data-scroll-target="#弹力有无的判断方法">弹力有无的判断方法</a></li>
   <li><a href="#弹簧弹力" id="toc-弹簧弹力" class="nav-link" data-scroll-target="#弹簧弹力">弹簧弹力</a></li>
   </ul></li>
   <li><a href="#摩擦力" id="toc-摩擦力" class="nav-link" data-scroll-target="#摩擦力">摩擦力</a></li>
@@ -237,7 +238,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">重力 弹力 摩擦力</h1>
+<h1 class="title">学考03-重力_弹力_摩擦力</h1>
   <div class="quarto-categories">
     <div class="quarto-category">学考复习</div>
   </div>
@@ -257,7 +258,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 9, 2024</p>
+      <p class="date">October 27, 2024</p>
     </div>
   </div>
   
@@ -341,20 +342,19 @@ style RecoveryDirection fill:#f9f,stroke:#333,stroke-width:2px,color:#333
 </div>
 </div>
 </div>
-<section id="接触面上的弹力方向判断垂直接触面指向受力物体" class="level3">
-<h3 class="anchored" data-anchor-id="接触面上的弹力方向判断垂直接触面指向受力物体">接触面上的弹力方向判断：<u>垂直接触面指向受力物体</u></h3>
+<section id="接触面上的弹力方向判断" class="level3">
+<h3 class="anchored" data-anchor-id="接触面上的弹力方向判断">接触面上的弹力方向判断</h3>
 <p><img src="./assets/学考03-重力_弹力_摩擦力-2.png" class="img-fluid"></p>
 </section>
-<div class="columns">
-<div class="column" style="width:50%;">
 <section id="弹力有无的判断方法" class="level3">
 <h3 class="anchored" data-anchor-id="弹力有无的判断方法">弹力有无的判断方法</h3>
+<div class="columns">
+<div class="column" style="width:60%;">
 <ul>
 <li><strong>条件法</strong>：根据弹力产生条件——物体是否直接接触并发生弹性形变</li>
 <li><strong>假设法</strong>：假设两个物体间 (存在弹力/不存在弹力)，看物体能否保持原有的状态</li>
 </ul>
-</section>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <p><img src="./assets/学考03-重力_弹力_摩擦力-8.png" class="img-fluid"></p>
 </div>
 </div>
@@ -363,6 +363,7 @@ style RecoveryDirection fill:#f9f,stroke:#333,stroke-width:2px,color:#333
 <p>关于如图中光滑球的受力情况，下列说法正确的是 ( <u>C</u> )</p>
 <p><img src="./assets/学考03-重力_弹力_摩擦力-4.png" class="img-fluid" width="500"></p>
 <p>A. 甲球和斜斜面之间可能有弹力作用<br> B. 乙球和与其接触的小球间有弹力作用<br> C. 丙球和与其接触的小球间有弹力作用<br> D. 倾斜的细绳可能对丁球有拉力作用</p>
+</section>
 </section>
 <section id="弹簧弹力" class="level3">
 <h3 class="anchored" data-anchor-id="弹簧弹力">弹簧弹力</h3>
@@ -476,12 +477,15 @@ Cb--&gt;Cb1(套公式);
 
 </main> <!-- /main -->
 <script>
+  var exerciseIndex = 1;
 // 查找所有 <h4> 标签中包含“练习”的文本，并自动编号
-document.querySelectorAll('h4').forEach((h4, index) => {
-  if (h4.textContent.includes("练习")) {
+  document.querySelectorAll('h4').forEach((h4) => {
+  // 使用正则表达式进行精确匹配，确保只有包含“练习”的文本才会编号
+    if (h4.textContent.includes("练习")) {
     // 自动编号
-    h4.textContent = h4.textContent.replace("练习", `练习${index + 1}`);
+    h4.textContent = h4.textContent.replace("练习", `练习${exerciseIndex}`);
     h4.classList.add("exercise");
+    exerciseIndex += 1;
   }
 });
 </script>
