@@ -18,6 +18,13 @@ strong {
     margin-bottom: 7px;/* 下侧外边距 */
 }
 
+.callout-info,
+.callout-todo {
+    display: none;
+    /* visibility: hidden; */
+  }
+
+
 /* 解决callout中列表行间距过大问题 */
 li p {
     margin-bottom: 0;
@@ -39,3 +46,4 @@ iframe {
     color: rgb(255, 155, 0);
     font-weight: bold;
 }
+
