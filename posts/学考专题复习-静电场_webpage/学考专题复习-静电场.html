@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="黄轶凡">
+<meta name="dcterms.date" content="2024-12-23">
+
+<title>学考专题复习-静电场 – iPhys</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+    window.initFeatureLoader = async function() {
+        console.log("Feature loader initialized");
+        
+        try {
+            // 加载功能配置文件
+            const response = await fetch('../../features/features.json');
+            const data = await response.json();
+            
+            // 确保首先加载公共 CSS
+            if (data.common && data.common.css) {
+                for (const cssFile of data.common.css) {
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = `../../features/${cssFile}`;
+                    document.head.appendChild(link);
+                }
+            }
+
+            // 将配置注入全局空间
+            window.featureConfigs = {};
+            data.features.forEach(feature => {
+                if (feature.config) {
+                    window.featureConfigs[feature.name] = feature.config;
+                }
+            });
+
+            // 加载启用的功能
+            data.features.forEach(feature => {
+                if (feature.enabled) {
+                    if (feature.files.css) {
+                        const link = document.createElement('link');
+                        link.rel = 'stylesheet';
+                        link.href = `../../features/${feature.files.css}`;
+                        document.head.appendChild(link);
+                    }
+                    
+                    if (feature.files.js) {
+                        const script = document.createElement('script');
+                        script.src = `../../features/${feature.files.js}`;
+                        document.body.appendChild(script);
+                    }
+                }
+            });
+        } catch (error) {
+            console.error('Error loading features:', error);
+        }
+    };
+</script>
+
+<script src="../../feature-loader.js" defer=""></script>
+
+  <script defer="" src="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">iPhys</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#静电场中力的性质" id="toc-静电场中力的性质" class="nav-link active" data-scroll-target="#静电场中力的性质">静电场中力的性质</a>
+  <ul class="collapse">
+  <li><a href="#场强的叠加原理" id="toc-场强的叠加原理" class="nav-link" data-scroll-target="#场强的叠加原理">场强的叠加原理</a></li>
+  <li><a href="#静电平衡" id="toc-静电平衡" class="nav-link" data-scroll-target="#静电平衡">静电平衡</a></li>
+  </ul></li>
+  <li><a href="#静电场中能的性质" id="toc-静电场中能的性质" class="nav-link" data-scroll-target="#静电场中能的性质">静电场中能的性质</a>
+  <ul class="collapse">
+  <li><a href="#物理量关系梳理" id="toc-物理量关系梳理" class="nav-link" data-scroll-target="#物理量关系梳理">物理量关系梳理</a>
+  <ul class="collapse">
+  <li><a href="#定量计算" id="toc-定量计算" class="nav-link" data-scroll-target="#定量计算">定量计算</a></li>
+  <li><a href="#定性分析" id="toc-定性分析" class="nav-link" data-scroll-target="#定性分析">定性分析</a></li>
+  </ul></li>
+  <li><a href="#电势差和场强的关系" id="toc-电势差和场强的关系" class="nav-link" data-scroll-target="#电势差和场强的关系">电势差和场强的关系</a>
+  <ul class="collapse">
+  <li><a href="#匀强电场特点" id="toc-匀强电场特点" class="nav-link" data-scroll-target="#匀强电场特点">匀强电场特点</a></li>
+  </ul></li>
+  <li><a href="#学考题型" id="toc-学考题型" class="nav-link" data-scroll-target="#学考题型">学考题型</a>
+  <ul class="collapse">
+  <li><a href="#解答第一题" id="toc-解答第一题" class="nav-link" data-scroll-target="#解答第一题">解答第一题</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">学考专题复习-静电场</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">学考复习</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>黄轶凡 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 23, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="静电场中力的性质" class="level1">
+<h1>静电场中力的性质</h1>
+<section id="场强的叠加原理" class="level2">
+<h2 class="anchored" data-anchor-id="场强的叠加原理">场强的叠加原理</h2>
+<p><a href="https://ggbtool.phycat.cn/front/?id=lvkal0rak2g&amp;W=800&amp;H=600&amp;E=0&amp;B=1&amp;S=0&amp;P=0&amp;R=0&amp;L=1&amp;F=1&amp;RE=1">两点电荷的电场-物理猫phycat.cn</a></p>
+</section>
+<section id="静电平衡" class="level2">
+<h2 class="anchored" data-anchor-id="静电平衡">静电平衡</h2>
+<ol type="1">
+<li>处于静电平衡状态下的导体，内部的电场强度处处为零</li>
+<li>导体内部没有净剩电荷，电荷只分布在导体的外表面</li>
+</ol>
+</section>
+</section>
+<section id="静电场中能的性质" class="level1">
+<h1>静电场中能的性质</h1>
+<section id="物理量关系梳理" class="level2">
+<h2 class="anchored" data-anchor-id="物理量关系梳理">物理量关系梳理</h2>
+<div class="columns">
+<div class="column" style="width:61%;">
+<p><img src="./assets/学考专题复习-静电场.png" class="img-fluid"></p>
+</div><div class="column" style="width:39%;">
+<div class="callout callout-style-default callout-tip callout-titled" title="电容器">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+电容器
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>电容定义式：<span class="math inline">C=\frac{Q}{U}</span></li>
+<li>平行板电容器 (决定式)：<span class="math inline">C=\frac{\varepsilon_{r}S}{4\pi kd}</span></li>
+<li>单位：法拉，简称：法，符号为 <span class="math inline">\text{F}</span>
+<ul>
+<li>微法 <u><span class="math inline">1\mu \text{F}=10^{-6}\text{F}</span></u></li>
+<li>皮法 <u><span class="math inline">1 \text{pF}=10^{-12}\text{F}</span></u></li>
+</ul></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-info" title="强调">
+<p>有一种说法，电势是高中物理中最难的概念。比它更抽象的概念考得没它深，考得更深的概念没它抽象。</p>
+<p>介绍顺序 1. 电场中力的性质 2. 电场中能的性质 - <span class="math inline">W_{AB}=-\Delta E_{p}=E_{pA}-E_{pB}</span>：电场力做功与路径无关只和电荷的初末位置有关。末位置有关。电荷在电场中具有势能，我们称这种形式的能为电势能 <span class="math inline">E_{p}</span>。 - <span class="math inline">\varphi=\frac{E_{p}}{q}</span>：电势能除了跟电场有关，还和电荷量有关；但是在确定电场的确定点，电势能和电荷量的比值是一定的。电荷在电场中某一点的电势能与它的电荷量之比，叫作电场在这一点的电势 <span class="math inline">\varphi</span>。 - <span class="math inline">U_{AB}=\varphi_{A}-\varphi_{B}</span>：两点间电势的差值叫做电势差。电势依赖零势面，是相对的；而电势差是绝对的。</p>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="**求电荷在某点的电势能**">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>求电荷在某点的电势能</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>静电力做功与电势能的关系：<span class="math inline">W_{AB}=E_{pA}-E_{pB}</span></li>
+<li>若规定上式中电荷在 <span class="math inline">B</span> 点的电势能为 <span class="math inline">0</span>，则电荷在 <span class="math inline">A</span> 点的电势能数值上等于 <span class="math inline">W_{AB}</span>。也就是说，<strong>电荷在某点的电势能，等于把它从这点移动到零势能位置时静电力做的功</strong>。</li>
+</ol>
+</div>
+</div>
+<section id="定量计算" class="level3">
+<h3 class="anchored" data-anchor-id="定量计算">定量计算</h3>
+<section id="快问快答" class="level4">
+<h4 class="anchored" data-anchor-id="快问快答">快问快答</h4>
+<p>在某点电荷激发的电场中，一带电量为 <span class="math inline">-q</span> 的点电荷从无穷远处移动到 <span class="math inline">A</span> 点，静电力做功为 <span class="math inline">W</span>，求：</p>
+<ol type="1">
+<li>该点电荷在 <span class="math inline">A</span> 点的电势能；</li>
+<li><span class="math inline">A</span> 点的电势。</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="答案">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+答案
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>无穷远处电势为零，点电荷在 <span class="math inline">A</span> 的电势能等于把它从 <span class="math inline">A</span> 移动到零势能位置时静电力做功，即 <span class="math inline">E_{pA}=-W</span></li>
+<li><span class="math inline">\varphi_{A}=\frac{E_{pA}}{-q}=\frac{W}{q}</span></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="练习" class="level4">
+<h4 class="anchored" data-anchor-id="练习">练习</h4>
+<p>电场中有 <span class="math inline">A</span>、<span class="math inline">B</span>、<span class="math inline">C</span> 三点，一带电量为 <span class="math inline">q=-2\times 10^{-9} \;C</span> 的点电荷在 <span class="math inline">A</span> 点的电势能为 <span class="math inline">E_{pA}=1.2 \times 10^{-8}\;J</span>，将该点电荷从 <span class="math inline">A</span> 点移动到 <span class="math inline">B</span> 点，静电力做功为 <span class="math inline">W_{AB}=1.8\times 10^{-8}\;J</span>，<span class="math inline">C</span> 点电势为 <span class="math inline">\varphi_{C}=-5V</span>。</p>
+<ol type="1">
+<li>求点电荷在 <span class="math inline">B</span> 点的电势能；</li>
+<li>求 <span class="math inline">B</span> 点的电势；</li>
+<li>求 <span class="math inline">B</span>、<span class="math inline">C</span> 两点间的电势差；</li>
+<li>求点电荷从 <span class="math inline">B</span> 点移动到 <span class="math inline">C</span> 点的电场力做功。</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="答案">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+答案
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><span class="math inline">W_{AB} = E_{pA}-E_{pB} \Rightarrow E_{pB} = E_{pA}-W_{AB}=1.2 \times 10^{-8}-1.8\times 10^{-8}=-6\times 10^{-9}\;J</span></li>
+<li><span class="math inline">\varphi_{B} = \frac{E_{pB}}{q}=\frac{-6\times 10^{-9}}{-2\times 10^{-9}}=3V</span></li>
+<li><span class="math inline">U_{BC} = \varphi_{B}-\varphi_{C}=3-(-5)=8V</span></li>
+<li><span class="math inline">W_{BC}=qU_{BC}=-2\times 10^{-9} \cdot 8=-1.6\times 10^{-8}\;J</span></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="定性分析" class="level3">
+<h3 class="anchored" data-anchor-id="定性分析">定性分析</h3>
+<section id="练习-1" class="level4">
+<h4 class="anchored" data-anchor-id="练习-1">练习</h4>
+<div class="columns">
+<div class="column" style="width:78%;">
+<p>如图所示，在匀强电场中，某初速度为零的带电粒子只在电场力作用下从 <span class="math inline">A</span> 运动到 <span class="math inline">B</span>。则从 <span class="math inline">A</span> 到 <span class="math inline">B</span>，判断以下物理量的变化情况：电势<u>降低</u>，电场强度<u>不变</u>，粒子动能<u>减小</u>，粒子电势能<u>减小</u></p>
+</div><div class="column" style="width:22%;">
+<p><img src="./assets/学考专题复习-静电场-7.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="练习-2" class="level4">
+<h4 class="anchored" data-anchor-id="练习-2">练习</h4>
+<p>若实线为电场线，虚线为带电粒子的运动轨迹，带电粒子只受静电力的作用从 <span class="math inline">A</span> 点向 <span class="math inline">B</span> 点运动。回答以下问题：</p>
+<div class="columns">
+<div class="column" style="width:72%;">
+<ol type="1">
+<li>画出粒子在 <span class="math inline">A</span> 点的运动方向和加速度方向；</li>
+<li>判断粒子的电性；</li>
+<li>判断粒子从 <span class="math inline">A</span> 到 <span class="math inline">B</span> 过程中，加速度大小和速度大小的变化情况；</li>
+<li>判断粒子从 <span class="math inline">A</span> 到 <span class="math inline">B</span> 过程中，电势能和电势的变化情况。</li>
+</ol>
+</div><div class="column" style="width:28%;">
+<p><img src="./assets/学考专题复习-静电场-8.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="电势差和场强的关系" class="level2">
+<h2 class="anchored" data-anchor-id="电势差和场强的关系">电势差和场强的关系</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 25%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>公式</th>
+<th>物理含义</th>
+<th style="text-align: left;">适用范围</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">E=\frac{F}{q}</span></td>
+<td>场强的定义式</td>
+<td style="text-align: left;">一切电场</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">E=k\frac{Q}{r^{2}}</span></td>
+<td>真空中点电荷场强的决定式</td>
+<td style="text-align: left;">真空中，场源电荷 <span class="math inline">Q</span> 是点电荷</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">E=\frac{U}{d}</span></td>
+<td>匀强电场中场强的决定式</td>
+<td style="text-align: left;">匀强电场</td>
+</tr>
+</tbody>
+</table>
+<section id="练习-3" class="level4">
+<h4 class="anchored" data-anchor-id="练习-3">练习</h4>
+<p>空间存在着平行纸面的匀强电场，但电场的具体方向未知，现在纸面内建立直角坐标系 <span class="math inline">xOy</span>，用仪器沿 <span class="math inline">Ox</span>、<span class="math inline">Oy</span> 两个方向探测该静电场中各点电势，得到各点电势 <span class="math inline">\varphi</span> 与横、纵坐标的函数关系如图所示。求该电场的电场强度 <span class="math inline">E</span>。</p>
+<p><img src="./assets/学考专题复习-静电场-1.png" class="img-fluid" width="300"></p>
+</section>
+<section id="匀强电场特点" class="level3">
+<h3 class="anchored" data-anchor-id="匀强电场特点">匀强电场特点</h3>
+<ol type="1">
+<li><strong>匀强电场中，两条平行线段上相等距离的两点间的电势差相等</strong></li>
+</ol>
+<p><span class="math display">
+\begin{cases}
+AB / / CD \\
+AB = CD
+\end{cases}
+\Rightarrow U_{AB} = U_{CD}
+</span></p>
+<div class="callout-info" title="推广">
+<p><span class="math inline">AB / / CD \Rightarrow \frac{U_{AB}}{U_{CD}} = \frac{L_{AB}}{L_{CD}}</span></p>
+</div>
+<ol start="2" type="1">
+<li><strong>匀强电场中，电势沿任意直线均匀变化（任意线段的几何等分点也是电势差等分点）</strong></li>
+</ol>
+<div class="callout-info" title="推广">
+<p>匀强电场中，电势沿任意直线均匀变化</p>
+</div>
+<section id="练习-4" class="level4">
+<h4 class="anchored" data-anchor-id="练习-4">练习</h4>
+<div class="columns">
+<div class="column" style="width:72%;">
+<p><span class="math inline">a</span>、<span class="math inline">b</span>、<span class="math inline">c</span>、<span class="math inline">d</span> 是匀强电场中的四个点，它们正好是一个矩形的四个顶点．电场线与矩形所在的平面平行．已知 <span class="math inline">a</span> 点的电势是 <span class="math inline">20\;V</span>，<span class="math inline">b</span> 点的电势是 <span class="math inline">24\;V</span>，<span class="math inline">d</span> 点的电势是 <span class="math inline">4\;V</span>，求 <span class="math inline">c</span> 点的电势。</p>
+</div><div class="column" style="width:28%;">
+<p><img src="./assets/学考专题复习-静电场-2.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="练习-5" class="level4">
+<h4 class="anchored" data-anchor-id="练习-5">练习</h4>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>有一匀强电场的方向平行于 <span class="math inline">xOy</span> 平面，平面内 <span class="math inline">a</span>、<span class="math inline">b</span>、<span class="math inline">c</span>、<span class="math inline">d</span> 四点的位置如图所示，<span class="math inline">cd</span>、<span class="math inline">cb</span> 分别垂直于 <span class="math inline">x</span> 轴、<span class="math inline">y</span> 轴，其中 <span class="math inline">a</span>、<span class="math inline">O</span>、<span class="math inline">b</span> 三点电势分别为：<span class="math inline">4\;V</span>、<span class="math inline">6\;V</span>、<span class="math inline">8\;V</span>，一电荷量为 <span class="math inline">q=-2\times 10^{-5}\;C</span> 的负点电荷由 <span class="math inline">a</span> 点开始沿 <span class="math inline">abcd</span> 路线运动。</p>
+<p>求：<span class="math inline">\varphi_{d}</span>，场强的大小和方向。</p>
+</div><div class="column" style="width:30%;">
+<p><img src="./assets/学考专题复习-静电场-3.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="练习-6" class="level4">
+<h4 class="anchored" data-anchor-id="练习-6">练习</h4>
+<div class="columns">
+<div class="column" style="width:75%;">
+<p>如图，<span class="math inline">A</span>、<span class="math inline">B</span>、<span class="math inline">C</span> 三点在匀强电场中，<span class="math inline">AC\bot BC</span>, <span class="math inline">\angle ABC=60^\circ</span>, <span class="math inline">BC=20 cm</span>，，把一个电荷量 <span class="math inline">q＝1\times10^{-5} C</span> 的正电荷从 <span class="math inline">A</span> 移到 <span class="math inline">B</span>，静电力做功 <span class="math inline">-8\times10^{-5} J</span>；从 <span class="math inline">B</span> 移到 <span class="math inline">C</span>，静电力做功为 <span class="math inline">2\times10^{-5} J</span> ，求该匀强电场的电场强度大小和方向？</p>
+</div><div class="column" style="width:25%;">
+<p><img src="./assets/学考专题复习-静电场-4.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="学考题型" class="level2">
+<h2 class="anchored" data-anchor-id="学考题型">学考题型</h2>
+<section id="解答第一题" class="level3">
+<h3 class="anchored" data-anchor-id="解答第一题">解答第一题</h3>
+<section id="练习-7" class="level4">
+<h4 class="anchored" data-anchor-id="练习-7">练习</h4>
+<p><img src="./assets/学考专题复习-静电场.jpeg" class="img-fluid" width="300"></p>
+<p>如图所示，真空中的两个点电荷分别固定在 <span class="math inline">x</span> 轴上坐标为 <span class="math inline">0</span> 和 <span class="math inline">6\;\mathrm{cm}</span> 的位置上，已知 <span class="math inline">Q_{1}=4.0\times 10^{-8}\;\mathrm{C}</span> 、<span class="math inline">Q_{2}=-1.0\times 10^{-8}\;\mathrm{C}</span>，静电力常量 <span class="math inline">k=9.0\times 10^{9}\;\mathrm{N \cdot m^{2} / C^{2}}</span>。这两个点电荷间的库仑力大小为 <u><span class="math inline">1\times 10^{-3}</span></u> <span class="math inline">\mathrm{N}</span>，<span class="math inline">Q_{1}</span> 在 <span class="math inline">Q_{2}</span> 处产生的场强大小为 <u><span class="math inline">1\times 10^{5}</span></u> <span class="math inline">\mathrm{V /m}</span>，两电荷电场中，合场强为 <span class="math inline">0</span> 的位置坐标是 <span class="math inline">12</span> <span class="math inline">\mathrm{cm}</span>，将一个正检验电荷自 <span class="math inline">1\;\mathrm{cm}</span> 处沿 <span class="math inline">x</span> 轴移到 <span class="math inline">1\;\mathrm{cm}</span> 处，其电势能<u>减小</u>(选填“增大”、“减小”、“先增大后减小”或“先减小后增大”)。</p>
+</section>
+<section id="练习-8" class="level4">
+<h4 class="anchored" data-anchor-id="练习-8">练习</h4>
+<div class="columns">
+<div class="column" style="width:82%;">
+<p>如图所示，用绝缘线把一个质量为 <span class="math inline">m</span> 的带电小球悬挂在带等量异种电荷的竖直平行板 <span class="math inline">AB</span> 之间，平衡时，悬挂小球的绝缘线偏离竖直方向的夹角为。已知 <span class="math inline">AB</span> 两板间的距离为 <span class="math inline">d</span>，两板间的电场强度为 <span class="math inline">E</span>（图中未标出）。则</p>
+<ol type="1">
+<li>小球带有<u>正电荷</u>(选填“正电荷”或“负电荷”)；</li>
+<li>两板间电势差大小 <u><span class="math inline">Ed</span></u>；</li>
+<li>小球所带的电荷量 <u><span class="math inline">\frac{mg\tan \theta}{E}</span></u>；</li>
+<li>保持 AB 板上的电荷量不变，将 A 板向左平移一些距离，悬挂小球的绝缘线与竖直方向的夹角将 <u>减小</u>(选填“减小”、“增大”或“保持不变”)。</li>
+</ol>
+</div><div class="column" style="width:18%;">
+<p><img src="./assets/学考专题复习-静电场-5.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="练习-9" class="level4">
+<h4 class="anchored" data-anchor-id="练习-9">练习</h4>
+<p>在如图甲所示的静电场中：</p>
+<p><img src="./assets/学考专题复习-静电场-6.png" class="img-fluid" width="270"></p>
+<ol type="1">
+<li>将电荷量为 <span class="math inline">3\times 10^{-8}\;\mathrm{C}</span> 的正试探电荷放入该静电场中的 <span class="math inline">c</span> 点，发现试探电荷受到的电场力为 <span class="math inline">1.2\times 10^{-7}\;\mathrm{N}</span>，则 <span class="math inline">c</span> 点的电场强度大小为 <u><span class="math inline">4\;\mathrm{N / C}</span></u>。</li>
+<li>在该电场中的 <span class="math inline">a</span>、<span class="math inline">b</span> 两处分别引入不同的试探电荷 <span class="math inline">q</span>，得到试探电荷受到的电场力随电荷量变化图像如图乙中的 <span class="math inline">A</span>、<span class="math inline">B</span> 两图线，则图线 <span class="math inline">A</span> 描述的是点 <u><span class="math inline">a</span></u>（选填“<span class="math inline">a</span>”或“<span class="math inline">b</span>”）的电场强度，电场中某点试探电荷 <span class="math inline">q</span> 所受电场力的方向与试探电荷 <span class="math inline">q</span> 正负 <u>有关</u>（选填“有关”或“无关”）。</li>
+<li>电场中<span class="math inline">a</span>、<span class="math inline">b</span>、<span class="math inline">c</span>三点的电势最高的是点 <u><span class="math inline">a</span></u>（选填“<span class="math inline">a</span>”或“<span class="math inline">b</span>”或“<span class="math inline">c</span>”）</li>
+</ol>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script>
+  var exerciseIndex = 1;
+// 查找所有 <h4> 标签中包含“练习”的文本，并自动编号
+  document.querySelectorAll('h4').forEach((h4) => {
+  // 使用正则表达式进行精确匹配，确保只有包含“练习”的文本才会编号
+    if (h4.textContent.includes("练习")) {
+    // 自动编号
+    h4.textContent = h4.textContent.replace("练习", `练习${exerciseIndex}`);
+    h4.classList.add("exercise");
+    exerciseIndex += 1;
+  }
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
