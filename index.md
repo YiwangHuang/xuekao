@@ -3,23 +3,29 @@
 layout: home
 
 hero:
-  name: "My Awesome Project"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: "Life Wisdom"
+  text: "Journey to Inner Growth"
+  tagline: Discover your better self and live a more meaningful life
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Begin Exploration
+      link: /self-discovery
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Find Your Purpose
+      link: /finding-purpose
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Self-Discovery
+    details: Understand your authentic self, uncover your inner potential and values, and build positive self-identity
+    link: /self-discovery
+  - title: Finding Purpose
+    details: Explore your passions and mission, discover direction and meaning in your life
+    link: /finding-purpose
+  - title: Building Resilience
+    details: Learn to face adversity, recover from setbacks, and emerge stronger
+    link: /building-resilience
+  - title: Overcoming Challenges
+    details: Conquer difficulties and obstacles, transform your mindset, and embrace life's various challenges
+    link: /overcoming-challenges
 ---
 
