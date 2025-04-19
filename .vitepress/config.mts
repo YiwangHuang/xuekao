@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Life Wisdom",
   description: "Inspirational Articles for Personal Growth",
-  base: '.',///xuekao/
+  base: '/',///xuekao/
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
