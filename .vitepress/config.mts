@@ -9,12 +9,12 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/self-discovery' }
+      { text: 'Articles', link: '/self-discovery' }
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Articles',
         items: [
           { text: 'Building Resilience', link: '/building-resilience' },
           { text: 'Finding Purpose', link: '/finding-purpose' },
