@@ -2,8 +2,9 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "My Awesome Project",
-  description: "A VitePress Site",
+  title: "Life Wisdom",
+  description: "Inspirational Articles for Personal Growth",
+  base: '/xuekao/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
